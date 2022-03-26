@@ -1,5 +1,7 @@
 # SuperTrunfo
 
+![home](https://user-images.githubusercontent.com/87939906/160259898-82a35117-c552-4183-99df-b58e4a8cd793.png)
+
 * Contextualização do domínio: O Super trunfo é um jogo de cartas que pode abranger diversos temas, foi criado na década de 70 e desde então é distribuído pela empresa Grow em território nacional. Buscando torná-lo mais prático que um jogo de cartas físico, a empresa já o disponibilizou para jogar multiplayer na internet no game Super Trunfo Battle Cards, no entanto, após o fim da do período de demostração era necessario pagar uma assinatura
 
 * Objetivo - Desenvolver um game off-line gratuito para desktop que possibilite o usuário criar qualquer 
