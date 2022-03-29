@@ -7,7 +7,7 @@
 * Objetivo - Desenvolver um game off-line gratuito para desktop que possibilite o usuário criar qualquer 
 tema e cartas para jogar contra uma I.A.
 
-* Utilizaremos a linguagem JAVA e o JavaFX, Scene Builder, para a construção da interface gráfica; estrutura de pilha (para armazenar as cartas dos jogadores), List para acessar as cartas no momento da partida e algoritmos de ordenação para o ranking; desenvolveremos o CRUD para cada classe; utilizaremos a biblioteca Random para embaralhar e entregar as cartas aos jogadores; desenvolveremos uma lógica gulosa para ser o adversário do jogador
+* Utilizaremos a linguagem JAVA e o JavaFX, Scene Builder, para a construção da interface gráfica; estrutura de pilha (para armazenar as cartas dos jogadores), List para acessar as cartas no momento da partida e algoritmos de ordenação para o ranking; desenvolveremos o CRUD para cada classe; utilizaremos a biblioteca Random para embaralhar e entregar as cartas aos jogadores; desenvolveremos uma lógica gulosa (busca as cartas com maiores valores de atributos) para ser o adversário do jogador. Por fim, mas não menos importante, utilizaremos arquivos binários para persistência de dados.
 
 * Link do FIGMA: https://www.figma.com/file/LkoxVTAbhzPpyeeQDgWhIh/Untitled]
 
