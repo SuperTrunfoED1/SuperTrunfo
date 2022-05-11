@@ -23,18 +23,11 @@
 hs_err_pid*
 replay_pid*
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
 # Local History for Visual Studio Code
 .history/
 
 # Built Visual Studio Code Extensions
 *.vsix
 
-#javafx libs
+.vscode/
 javafx-sdk-17.0.0.1/
