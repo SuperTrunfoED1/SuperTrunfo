@@ -21,7 +21,7 @@ public class Main extends Application {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
     
-            loader.setLocation(this.getClass().getResource("/fxml/TelaPrincipal.fxml"));
+            loader.setLocation(this.getClass().getResource("/fxml/MainMenu.fxml"));
             //loader.setController(LoginController.class);
     
             Parent parent = loader.load();
