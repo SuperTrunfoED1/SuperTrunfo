@@ -31,3 +31,5 @@ replay_pid*
 
 .vscode/
 javafx-sdk-17.0.0.1/
+.vscode/launch.json
+.vscode/settings.json
