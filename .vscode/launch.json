@@ -6,6 +6,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Testador",
+            "request": "launch",
+            "mainClass": "util.Testador",
+            "projectName": "SuperTrunfo_140e8d5b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "src.Main",
+            "projectName": "SuperTrunfo_140e8d5b",
+            "vmArgs": "--module-path \"javafx-sdk-17.0.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -14,7 +29,7 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
-             "vmArgs": "--module-path javafx-sdk-17.0.0.1/lib --add-modules javafx.controls,javafx.fxml", 
+            "vmArgs": "--module-path javafx-sdk-17.0.0.1/lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "src.Main",
             "projectName": "SuperTrunfo_c75033d3"
         },

@@ -9,6 +9,10 @@ public interface ListaInterface<T> {
     T set(T antigo, T novo);//altera o elemento
     
     T remove(T coisa);
+
+    T shift();//remove o primeiro nó
+
+    T pop(); //remove o ultimo nó
     
     T peekFirst();
     

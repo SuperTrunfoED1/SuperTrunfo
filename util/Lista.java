@@ -93,19 +93,9 @@ public class Lista<T> implements ListaInterface<T> {
             
             size--;   
         }else if(first.content.equals(cont)){
-            retorno = first.content;
-            
-            first.next.before = null;
-            first = first.next;
-            
-            size--;
+            retorno = shift();
         }else if(last.content.equals(cont)){
-            retorno = last.content;
-            
-            last.before.next = null;
-            last = last.before;
-            
-            size--;
+            retorno = pop();
         }else{
             Node tmp = first;
 
@@ -167,6 +157,54 @@ public class Lista<T> implements ListaInterface<T> {
         }else{
             System.out.println("Lista vazia!!");
         }
+    }
+
+    @Override
+    public T pop() {
+        T removido = null;
+
+        if(last == null){
+            System.out.println("Lista vazia!!");
+        }else{
+            removido = last.content;
+            if(first == last){
+                first = null;
+                last = null;
+
+                size--;
+            }else{
+                last.before.next = null;
+                last = last.before;
+
+                size--;
+            }
+        }
+
+        return removido;
+    }
+
+    @Override
+    public T shift() {
+        T removido = null;
+
+        if(first == null){
+            System.out.println("Lista vazia!!");
+        }else{
+            removido = first.content;
+            if(first == last){
+                first = null;
+                last = null;
+
+                size--;
+            }else{
+                first.next.before = null;
+                first = first.next;
+
+                size--;
+            }
+        }
+
+        return removido;
     }
     
 }
