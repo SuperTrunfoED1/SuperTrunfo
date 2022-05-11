@@ -13,14 +13,14 @@
    <children>
       <ImageView fitHeight="406.0" fitWidth="607.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true">
          <image>
-            <Image url="@../assets/black-background-with-squares-geometric-vector-27040220%201.png" />
+            <Image url="@assets/black-background-with-squares-geometric-vector-27040220%201.png" />
          </image>
       </ImageView>
       <VBox layoutX="208.0" layoutY="85.0" prefHeight="230.0" prefWidth="202.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
          <children>
             <ImageView fitHeight="149.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/logo%201.png" />
+                  <Image url="@assets/logo%201.png" />
                </image>
             </ImageView>
             <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: D7A865;" text="Jogar" textFill="#ba643f">
@@ -41,7 +41,7 @@
                <children>
                   <ImageView fitHeight="46.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                      <image>
-                        <Image url="@../assets/user%201.png" />
+                        <Image url="@assets/user%201.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="5.0" right="350.0" top="5.0" />
@@ -62,7 +62,7 @@
                               <Insets left="5.0" top="6.0" />
                            </VBox.margin>
                            <image>
-                              <Image url="@../assets/out.png" />
+                              <Image url="@assets/out.png" />
                            </image>
                         </ImageView>
                      </children>

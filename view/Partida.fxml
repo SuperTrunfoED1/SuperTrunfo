@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/background.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="106.0" prefHeight="143.0" prefWidth="110.0" style="-fx-background-color: B24A4A;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="208.0" prefHeight="149.0" prefWidth="110.0" style="-fx-background-color: #59B24A;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="300.0" layoutY="-1.0" prefHeight="159.0" prefWidth="110.0" style="-fx-background-color: B2A84A;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="394.0" layoutY="-4.0" prefHeight="149.0" prefWidth="110.0" style="-fx-background-color: B24A82;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="14.0" layoutY="157.0" prefHeight="110.0" prefWidth="91.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="91.0" text="1" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="91.0" text="-" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="91.0" text="1" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="106.0" layoutY="242.0" prefHeight="158.0" prefWidth="110.0" style="-fx-background-color: B2A84A;">
+         <children>
+            <VBox prefHeight="156.0" prefWidth="110.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="139.0" text="Super Trunfo" />
+                  <ImageView fitHeight="54.0" fitWidth="86.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@assets/RONALDINHO%201.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="12.0" right="12.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="51.0">
+                           <children>
+                              <Label text="Label" />
+                              <Label text="Label" />
+                           </children>
+                        </HBox>
+                        <Label text="Label" />
+                        <Label text="Label" />
+                        <Label text="Label" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox layoutX="216.0" layoutY="251.0" prefHeight="149.0" prefWidth="110.0" style="-fx-background-color: #59B24A;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="326.0" layoutY="238.0" prefHeight="165.0" prefWidth="110.0" style="-fx-background-color: B24A4A;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="436.0" layoutY="246.0" prefHeight="159.0" prefWidth="110.0" style="-fx-background-color: B24A82;">
+         <children>
+            <ImageView fitHeight="113.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/logo%201.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="36.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -11,14 +11,14 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
-            <Image url="@../assets/black-background-with-squares-geometric-vector-27040220%201.png" />
+            <Image url="@assets/black-background-with-squares-geometric-vector-27040220%201.png" />
          </image>
       </ImageView>
       <VBox layoutX="166.0" layoutY="7.0" prefHeight="383.0" prefWidth="279.0" style="-fx-background-color: #828282; -fx-background-radius: 8;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/logo%201.png" />
+                  <Image url="@assets/logo%201.png" />
                </image>
                <VBox.margin>
                   <Insets left="30.0" />
