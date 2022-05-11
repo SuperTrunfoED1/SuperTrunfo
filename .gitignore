@@ -37,4 +37,4 @@ replay_pid*
 *.vsix
 
 #javafx libs
-.javafx-sdk-17.0.0.1/*
+javafx-sdk-17.0.0.1/*
