@@ -1,138 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="406.0" fitWidth="607.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
             <Image url="@assets/black-background-with-squares-geometric-vector-27040220%201.png" />
          </image>
       </ImageView>
-      <VBox layoutX="208.0" layoutY="85.0" prefHeight="230.0" prefWidth="202.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
+      <Pane layoutX="344.0" layoutY="572.0" prefHeight="102.0" prefWidth="600.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
          <children>
-            <ImageView fitHeight="149.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/logo%201.png" />
-               </image>
-            </ImageView>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: D7A865;" text="Jogar" textFill="#ba643f">
-               <VBox.margin>
-                  <Insets left="40.0" top="15.0" />
-               </VBox.margin>
-            </Button>
-            <Button layoutX="60.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: D7A865;" text="Gerador de Cartas" textFill="#ba643f">
-               <VBox.margin>
-                  <Insets left="40.0" top="22.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-      <HBox alignment="TOP_CENTER" layoutX="91.0" layoutY="14.0" prefHeight="57.0" prefWidth="436.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
-         <children>
-            <HBox prefHeight="57.0" prefWidth="456.0">
+            <VBox alignment="TOP_CENTER" layoutX="28.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
                <children>
-                  <ImageView fitHeight="46.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@assets/user%201.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="5.0" right="350.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label prefHeight="57.0" prefWidth="150.0" text="Ricfardo">
-                     <HBox.margin>
-                        <Insets left="-341.0" />
-                     </HBox.margin>
+                  <Label prefHeight="38.0" prefWidth="66.0" text="Peter" textFill="WHITE">
                      <font>
-                        <Font name="Impact" size="24.0" />
+                        <Font name="Arial Black" size="21.0" />
                      </font>
                   </Label>
-                  <VBox prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: D7A865;">
-                     <children>
-                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                           <VBox.margin>
-                              <Insets left="5.0" top="6.0" />
-                           </VBox.margin>
-                           <image>
-                              <Image url="@assets/out.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <padding>
-                        <Insets right="-77.0" />
-                     </padding>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="180.0" right="10.0" top="5.0" />
-                     </HBox.margin>
-                  </VBox>
+                  <ImageView fitHeight="23.0" fitWidth="23.0">
+                     <image>
+                        <Image url="@assets/primeiro.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="30.0" prefWidth="76.0" text="1000 Pt" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                  </Label>
                </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </HBox>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="228.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="63.0" text="Peter" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="23.0">
+                     <image>
+                        <Image url="@assets/segundo.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="30.0" prefWidth="76.0" text="1000 Pt" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="428.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="64.0" text="Peter" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="23.0">
+                     <image>
+                        <Image url="@assets/terceiro.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="30.0" prefWidth="76.0" text="1000 Pt" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
          </children>
-      </HBox>
-      <HBox layoutX="132.0" layoutY="329.0" prefHeight="65.0" prefWidth="348.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
+      </Pane>
+      <Pane layoutX="225.0" layoutY="50.0" prefHeight="94.0" prefWidth="837.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
          <children>
-            <HBox prefHeight="65.0" prefWidth="174.0" style="-fx-background-color: #1E1E1E;">
+            <ImageView fitHeight="66.0" fitWidth="74.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/user%201.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="739.0" layoutY="12.0" prefHeight="71.0" prefWidth="69.0" style="-fx-background-color: D7A865; -fx-background-radius: 7;">
                <children>
-                  <Label text="PETER123" textFill="#c4c4c4">
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label text="10000 PT" textFill="#c4c4c4">
-                     <HBox.margin>
-                        <Insets left="-49.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
+                  <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="18.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/out.png" />
+                     </image>
+                  </ImageView>
                </children>
-               <HBox.margin>
-                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-               </HBox.margin>
-            </HBox>
-            <HBox prefHeight="65.0" prefWidth="174.0" style="-fx-background-color: #1E1E1E;">
-               <children>
-                  <Label prefHeight="17.0" prefWidth="73.0" text="9700 PT" textFill="#c4c4c4">
-                     <HBox.margin>
-                        <Insets left="27.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label text="RICFARDO" textFill="#c4c4c4">
-                     <HBox.margin>
-                        <Insets left="-78.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <HBox.margin>
-                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-               </HBox.margin>
-            </HBox>
-            <HBox layoutX="134.0" layoutY="18.0" prefHeight="65.0" prefWidth="174.0" style="-fx-background-color: #1E1E1E;">
-               <children>
-                  <Label prefHeight="17.0" prefWidth="73.0" text="9500 PT" textFill="#c4c4c4">
-                     <HBox.margin>
-                        <Insets left="27.0" top="30.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label text="VITUD70" textFill="#c4c4c4">
-                     <HBox.margin>
-                        <Insets left="-78.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <HBox.margin>
-                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-               </HBox.margin>
-            </HBox>
-         </children></HBox>
+            </Pane>
+            <TextField layoutX="95.0" layoutY="26.0" prefHeight="43.0" prefWidth="174.0" text="Digite seu nome">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane layoutX="490.0" layoutY="239.0" prefHeight="304.0" prefWidth="307.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
+         <children>
+            <Button layoutX="51.0" layoutY="137.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: D7A865;" text="Jogar" textFill="#ba643f">
+               <font>
+                  <Font name="Arial Black" size="21.0" />
+               </font>
+            </Button>
+            <Button layoutX="50.0" layoutY="197.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: D7A865;" text="Gerador de Cartas" textFill="#ba643f">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="182.0" fitWidth="280.0" layoutX="504.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/logo%201.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
