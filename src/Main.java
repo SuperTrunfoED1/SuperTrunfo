@@ -48,4 +48,20 @@ public class Main extends Application {
         pS.setScene(cena);
     }
 
+    public static void telaGerador() throws IOException {
+
+        Parent root = FXMLLoader.load(Main.class.getResource("/view/Gerador.fxml"));
+        Scene cena = new Scene(root);
+        pS.setTitle("Gerador");
+        pS.setScene(cena);
+    }
+
+    public static void telaCriarCarta() throws IOException {
+
+        Parent root = FXMLLoader.load(Main.class.getResource("/view/CriarCartas.fxml"));
+        Scene cena = new Scene(root);
+        pS.setTitle("Criar Carta");
+        pS.setScene(cena);
+    }
+
 }

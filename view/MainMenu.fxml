@@ -109,7 +109,7 @@
                   <Font name="Arial Black" size="21.0" />
                </font>
             </Button>
-            <Button layoutX="50.0" layoutY="197.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: D7A865; -fx-cursor: hand;" text="Gerador de Cartas" textFill="#ba643f">
+            <Button layoutX="50.0" layoutY="197.0" mnemonicParsing="false" onAction="#gerarCartas" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: D7A865; -fx-cursor: hand;" text="Gerador de Cartas" textFill="#ba643f">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font>

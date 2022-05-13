@@ -13,4 +13,9 @@ public class mainMenu {
         Main.telaLogin();
     }
 
+    @FXML
+    void gerarCartas(ActionEvent event) throws IOException {
+        Main.telaGerador();
+    }
+
 }
