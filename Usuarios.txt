@@ -1,0 +1,3 @@
+Felipe,123,0
+Felipee,1,0
+Julia,a,0

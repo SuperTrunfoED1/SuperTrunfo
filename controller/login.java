@@ -1,7 +1,10 @@
 package controller;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
+import game.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,6 +20,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import src.Main;
+import util.Lista;
+import util.ListaInterface;
 
 public class login {
 
@@ -37,11 +42,14 @@ public class login {
 
     private int testEntrada;
 
-
     @FXML
     void autenticar(ActionEvent event) throws IOException {
 
-        if (usuario.getText().equals("") && senha.getText().equals("")) {
+        User user = new User();
+        user.setNickname(usuario.getText());
+        user.setSenha(senha.getText());
+
+        if (user.autenticar(user)) {
             Main.telaMainMenu();
         } else {
             msgIncorreto.setVisible(true);

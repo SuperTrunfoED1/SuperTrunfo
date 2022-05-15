@@ -9,6 +9,8 @@ public interface ListaInterface<T> {
     T set(T antigo, T novo);//altera o elemento
     
     T remove(T coisa);
+    
+    T search(T criterio);
 
     T shift();//remove o primeiro nó
 

@@ -1,39 +1,44 @@
 package util;
 
+import javafx.scene.Node;
+
 public class Lista<T> implements ListaInterface<T> {
-    class Node{
+    class Node {
         Node next;
         Node before;
         T content;
 
-        public Node(T cont){
+        public Node(T cont) {
             content = cont;
             next = null;
             before = null;
         }
     }
-    //------------------------------
-    //atributos
+
+    // ------------------------------
+    // atributos
     Node first;
     Node last;
     Integer size;
-    //------------------------------
-    //construtor
-    public Lista(){
+
+    // ------------------------------
+    // construtor
+    public Lista() {
         first = null;
         last = null;
         size = 0;
     }
-    //------------------------------
-    //metodos
+
+    // ------------------------------
+    // metodos
     @Override
     public void addFirst(T cont) {
         Node novo = new Node(cont);
 
-        if(first == null){
+        if (first == null) {
             first = novo;
             last = novo;
-        }else{
+        } else {
             first.before = novo;
             novo.next = first;
             first = novo;
@@ -42,13 +47,13 @@ public class Lista<T> implements ListaInterface<T> {
     }
 
     @Override
-    public void add(T cont) {//a.k.a. addLast
+    public void add(T cont) {// a.k.a. addLast
         Node novo = new Node(cont);
-        
-        if(last == null){
+
+        if (last == null) {
             first = novo;
             last = novo;
-        }else{
+        } else {
             last.next = novo;
             novo.before = last;
             last = novo;
@@ -59,20 +64,20 @@ public class Lista<T> implements ListaInterface<T> {
     @Override
     public T set(T antigo, T novo) {
         Node nov = new Node(novo);
-        
-        if(first != null){
+
+        if (first != null) {
             Node tmp = first;
 
             while (tmp != null) {
-                if(tmp.content.equals(antigo)){
-                    tmp.content = nov.content;//atribui o novo nó ao antigo
-                    return antigo;//finaliza o laço e retorna o elemento antigo
-                }else{
+                if (tmp.content.equals(antigo)) {
+                    tmp.content = nov.content;// atribui o novo nó ao antigo
+                    return antigo;// finaliza o laço e retorna o elemento antigo
+                } else {
                     tmp = tmp.next;
                 }
             }
             return null;
-        }else{
+        } else {
             System.out.println("Lista vazia!");
             return null;
         }
@@ -83,37 +88,37 @@ public class Lista<T> implements ListaInterface<T> {
     public T remove(T cont) {
         T retorno = null;
 
-        if(first == null){
-            System.out.println("Lista vazia!");            
-        }else if((first == last) && (first.content.equals(cont))){
+        if (first == null) {
+            System.out.println("Lista vazia!");
+        } else if ((first == last) && (first.content.equals(cont))) {
             retorno = first.content;
-            
+
             first = null;
-            last = null; 
-            
-            size--;   
-        }else if(first.content.equals(cont)){
+            last = null;
+
+            size--;
+        } else if (first.content.equals(cont)) {
             retorno = shift();
-        }else if(last.content.equals(cont)){
+        } else if (last.content.equals(cont)) {
             retorno = pop();
-        }else{
+        } else {
             Node tmp = first;
 
             while (tmp != null) {
-                if(tmp.content.equals(cont)){
+                if (tmp.content.equals(cont)) {
                     retorno = tmp.content;
-                    
+
                     tmp.before.next = tmp.next;
                     tmp.next.before = tmp.before;
                     tmp.next = null;
                     tmp.before = null;
-                    
+
                     size--;
                     break;
-                }else{
+                } else {
                     tmp = tmp.next;
                 }
-            } 
+            }
         }
 
         return retorno;
@@ -121,40 +126,40 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public T peekFirst() {
-        if(first != null){
+        if (first != null) {
             return first.content;
-        }else{
+        } else {
             System.out.println("Lista vazia!!");
             return null;
         }
-        
+
     }
 
     @Override
     public T peekLast() {
-        if(last != null){
+        if (last != null) {
             return last.content;
-        }else{
+        } else {
             System.out.println("Lista vazia!!");
             return null;
         }
     }
 
     @Override
-    public void show() {//método utilizado para depuração
+    public void show() {// método utilizado para depuração
         Node tmp = first;
         int i = 1;
 
-        if(tmp != null){
+        if (tmp != null) {
             System.out.println("---------------------------------------");
-            while(tmp != null){
+            while (tmp != null) {
                 System.out.println(i + "º elemento: " + tmp.content);
                 tmp = tmp.next;
                 i += 1;
             }
             System.out.println("TAMNHO: " + size);
             System.out.println("---------------------------------------");
-        }else{
+        } else {
             System.out.println("Lista vazia!!");
         }
     }
@@ -163,16 +168,16 @@ public class Lista<T> implements ListaInterface<T> {
     public T pop() {
         T removido = null;
 
-        if(last == null){
+        if (last == null) {
             System.out.println("Lista vazia!!");
-        }else{
+        } else {
             removido = last.content;
-            if(first == last){
+            if (first == last) {
                 first = null;
                 last = null;
 
                 size--;
-            }else{
+            } else {
                 last.before.next = null;
                 last = last.before;
 
@@ -187,16 +192,16 @@ public class Lista<T> implements ListaInterface<T> {
     public T shift() {
         T removido = null;
 
-        if(first == null){
+        if (first == null) {
             System.out.println("Lista vazia!!");
-        }else{
+        } else {
             removido = first.content;
-            if(first == last){
+            if (first == last) {
                 first = null;
                 last = null;
 
                 size--;
-            }else{
+            } else {
                 first.next.before = null;
                 first = first.next;
 
@@ -206,5 +211,21 @@ public class Lista<T> implements ListaInterface<T> {
 
         return removido;
     }
-    
+
+    public T search(T criterio) {
+        Node p = first; // ponteiro temporario
+
+        if (first != null) {
+            while (p != null) {
+                if (p.content.equals(criterio)) {
+                    System.out.println();
+                    return p.content;
+                }
+                p = p.next;
+            }
+        }
+
+        return null;
+    }
+
 }

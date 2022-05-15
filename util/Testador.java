@@ -2,36 +2,43 @@ package util;
 
 import java.io.IOException;
 
+import game.User;
+
 public class Testador {
-    public static void main(String[] args) {
-        ListaInterface<String> lista = new Lista<String>();
-        ListaInterface<String> lista2;
-        EscritorCSV escritor = new EscritorCSV();
-        
-        lista.add("primeiro");
-        lista.add("segundo");
-        lista.add("terceiro");
-        lista.add("kkk");
+	public static void main(String[] args) {
 
-        try {
-			escritor.escrever("util/texto.txt", lista);
-		} catch (IOException e) {
-			System.out.println("Erro na escrita");
-			e.printStackTrace();
-		} catch (Exception e) {
-			System.out.println("Pane geral!");
-			e.printStackTrace();
-		}
+		/*
+		 * ListaInterface<String> lista = new Lista<String>();
+		 * 
+		 * lista.add("primeiro");
+		 * lista.add("segundo");
+		 * lista.add("terceiro");
+		 * lista.add("kkk");
+		 * 
+		 * String quarto = lista.search("primeiro");;
+		 */
 
-        try {
-			lista2 = escritor.ler("util/texto.txt");
-			lista2.show();
-		} catch (IOException e) {
-			System.out.println("Erro na leitura");
-			e.printStackTrace();
-		} catch (Exception e) {
-			System.out.println("Pane geral!");
-			e.printStackTrace();
-		}
-    }
+
+		ListaInterface<User> lista = new Lista<User>();
+
+		User novo = new User();
+		User novo2 = new User();
+		User novo3 = new User();
+		User novo4 = new User();
+
+		novo2.setNickname("Joao");
+		novo3.setNickname("Juliana");
+
+		lista.add(novo2);
+		lista.add(novo3);
+
+		novo.setNickname("Felipe");
+
+		novo4 = lista.search(novo);
+
+		
+
+
+
+	}
 }
