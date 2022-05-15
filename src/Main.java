@@ -10,6 +10,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    // classe de teste para os arquivos .fxml
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     private static Stage pS;
 
     public static Stage getpS() {
@@ -18,11 +23,6 @@ public class Main extends Application {
 
     public static void setpS(Stage pS) {
         Main.pS = pS;
-    }
-
-    // classe de teste para os arquivos .fxml
-    public static void main(String[] args) {
-        launch(args);
     }
 
     @Override
@@ -61,6 +61,13 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(Main.class.getResource("/view/CriarCartas.fxml"));
         Scene cena = new Scene(root);
         pS.setTitle("Criar Carta");
+        pS.setScene(cena);
+    }
+
+    public static void telaPartida() throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("/view/Partida.fxml"));
+        Scene cena = new Scene(root);
+        pS.setTitle("Partida");
         pS.setScene(cena);
     }
 
