@@ -48,7 +48,6 @@ public class cadastrarUsuario {
 
                 if (senha.getText().equals(repitaSenha.getText())) {
 
-                    System.out.println("erro aqui");
                     user.setSenha(senha.getText());
 
                     lista.add(user);

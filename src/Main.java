@@ -17,6 +17,16 @@ public class Main extends Application {
 
     private static Stage pS;
 
+    private static String retorno;
+
+    public static String getRetorno() {
+        return retorno;
+    }
+
+    public static void setRetorno(String retorno) {
+        Main.retorno = retorno;
+    }
+
     public static Stage getpS() {
         return pS;
     }

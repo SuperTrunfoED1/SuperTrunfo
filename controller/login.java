@@ -1,8 +1,7 @@
 package controller;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.util.Set;
 
 import game.User;
 import javafx.event.ActionEvent;
@@ -20,8 +19,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import src.Main;
-import util.Lista;
-import util.ListaInterface;
 
 public class login {
 
@@ -45,12 +42,18 @@ public class login {
     @FXML
     void autenticar(ActionEvent event) throws IOException {
 
+       
+        Main.setRetorno(usuario.getText());
+        
         User user = new User();
         user.setNickname(usuario.getText());
         user.setSenha(senha.getText());
 
         if (user.autenticar(user)) {
+            
             Main.telaMainMenu();
+           
+
         } else {
             msgIncorreto.setVisible(true);
 
@@ -77,7 +80,7 @@ public class login {
 
         Stage stg = new Stage();
         Parent cadastro = FXMLLoader.load(getClass().getResource("/view/CadastrarUsuario.fxml"));
-        Scene cena  = new Scene(cadastro);
+        Scene cena = new Scene(cadastro);
         stg.setScene(cena);
         stg.setTitle("Cadastrar");
         stg.show();

@@ -1,6 +1,6 @@
 package util;
 
-import java.io.IOException;
+
 
 import game.User;
 
@@ -24,7 +24,6 @@ public class Testador {
 		User novo = new User();
 		User novo2 = new User();
 		User novo3 = new User();
-		User novo4 = new User();
 
 		novo2.setNickname("Joao");
 		novo3.setNickname("Juliana");
@@ -34,7 +33,7 @@ public class Testador {
 
 		novo.setNickname("Felipe");
 
-		novo4 = lista.search(novo);
+	
 
 		
 

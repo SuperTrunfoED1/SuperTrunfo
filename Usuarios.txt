@@ -1,3 +1,4 @@
-Felipe,123,0
-Felipee,1,0
-Julia,a,0
+Felipe,123,10
+Felipee,1,20
+Julia,a,60
+Joao,123,1000

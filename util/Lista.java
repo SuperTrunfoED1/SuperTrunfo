@@ -1,7 +1,5 @@
 package util;
 
-import javafx.scene.Node;
-
 public class Lista<T> implements ListaInterface<T> {
     class Node {
         Node next;
@@ -17,9 +15,9 @@ public class Lista<T> implements ListaInterface<T> {
 
     // ------------------------------
     // atributos
-    Node first;
-    Node last;
-    Integer size;
+    private Node first;
+    private Node last;
+    public Integer size;
 
     // ------------------------------
     // construtor

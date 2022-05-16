@@ -8,35 +8,36 @@ import java.io.Serializable;
 import util.Lista;
 import util.ListaInterface;
 
-public class User implements Serializable{
+public class User implements Serializable {
 
     private String nickname;
     private String senha;
     private Integer score;
-    
-    //------------------------------------
-    //construtores
-    public User(String nick, String senha){
+
+    // ------------------------------------
+    // construtores
+    public User(String nick, String senha) {
         setNickname(nick);
         setSenha(senha);
         setScore(0);
     }
 
-    public User(){
+    public User() {
         nickname = "";
         senha = "";
         score = 0;
     }
 
-    //------------------------------------
-    //getters-setters
+    // ------------------------------------
+    // getters-setters
     public Integer getScore() {
         return score;
     }
+
     public void setScore(Integer score) {
-        if(score < 0){
+        if (score < 0) {
             System.out.println("Pontuação precisa ser zero ou maior!");
-        }else{
+        } else {
             this.score = score;
         }
     }
@@ -44,12 +45,13 @@ public class User implements Serializable{
     public String getSenha() {
         return senha;
     }
+
     public void setSenha(String senha) {
-        if(senha == null){
+        if (senha == null) {
             System.out.println("Digita algo!");
-        }else if(senha.isBlank()){
+        } else if (senha.isBlank()) {
             System.out.println("A senha não pode ser apenas um espaço vazio!");
-        }else{
+        } else {
             this.senha = senha;
         }
     }
@@ -57,39 +59,35 @@ public class User implements Serializable{
     public String getNickname() {
         return nickname;
     }
+
     public void setNickname(String nickname) {
-        if(nickname == null){
+        if (nickname == null) {
             System.out.println("Digita algo!");
-        }else if(nickname.isBlank()){
+        } else if (nickname.isBlank()) {
             System.out.println("O nick não pode ser apenas um espaço vazio!");
-        }else{
+        } else {
             this.nickname = nickname;
         }
     }
-    //------------------------------------
-    //metodos
-    public boolean autenticar(User usu) throws IOException{
-        if(usu == null){
-            System.out.println("Usuário inválido!");
-            return false;
-        }else{
 
-            ListaInterface<User> ListaUsuarios = new Lista<User>();
-            ListaUsuarios = ler("Usuarios.txt");
-            User usuarios = new User();
-            usuarios = ListaUsuarios.search(usu);
+    public User buscar(User usu) throws IOException {
 
-            if (usuarios != null) {
-                if(usuarios.getNickname().equals(usu.getNickname()) && usuarios.getSenha().equals(usu.getSenha())){
-                    return true;
-                }else{
-                    return false;
-                }
-            }
+        ListaInterface<User> ListaUsuarios = new Lista<User>();
+        ListaUsuarios = ler("Usuarios.txt");
+        User usuario = ListaUsuarios.search(usu);
+        
+        return usuario;
 
-            return false;
-            
-        }
+    }
+
+    public Lista buscarTodos() throws IOException {
+
+        ListaInterface<User> ListaUsuarios = new Lista<User>();
+        ListaUsuarios = ler("Usuarios.txt");
+       
+       
+        return (Lista) ListaUsuarios;
+
     }
 
     public ListaInterface<User> ler(String path) throws IOException {
@@ -102,7 +100,7 @@ public class User implements Serializable{
             linha = bufferedReader.readLine();
             User usuarios = new User();
             if (linha != null) {
-                
+
                 String[] armazena = linha.split(",");
                 usuarios.setNickname(armazena[0]);
                 usuarios.setSenha(armazena[1]);
@@ -117,9 +115,34 @@ public class User implements Serializable{
         return ListaUsuarios;
     }
 
+
+    // ------------------------------------
+    // metodos
+    public boolean autenticar(User usu) throws IOException {
+        if (usu == null) {
+            System.out.println("Usuário inválido!");
+            return false;
+        } else {
+
+            User usuario = buscar(usu);
+
+            if (usuario != null) {
+                if (usuario.getNickname().equals(usu.getNickname()) && usuario.getSenha().equals(usu.getSenha())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            return false;
+
+        }
+    }
+
+   
     @Override
     public String toString() {
-        return nickname + "," + senha + "," +  score;
+        return nickname + "," + senha + "," + score;
     }
 
     @Override
@@ -147,5 +170,4 @@ public class User implements Serializable{
         return true;
     }
 
-    
 }
