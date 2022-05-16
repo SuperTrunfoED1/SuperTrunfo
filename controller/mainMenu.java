@@ -70,7 +70,7 @@ public class mainMenu implements Initializable {
 
         }
 
-        Main.setHanking1(hanking);
+        Main.setRanking1(hanking);
         listaParaHanking.remove(hanking);
 
         NomePrimeiro.setText(hanking.getNickname());
@@ -84,7 +84,7 @@ public class mainMenu implements Initializable {
             }
 
         }
-        Main.setHanking2(hanking);
+        Main.setRanking2(hanking);
         listaParaHanking.remove(hanking);
 
         NomeSegundo.setText(hanking.getNickname());
@@ -99,7 +99,7 @@ public class mainMenu implements Initializable {
 
         }
 
-        Main.setHanking3(hanking);
+        Main.setRanking3(hanking);
         listaParaHanking.remove(hanking);
 
         NomeTerceiro.setText(hanking.getNickname());

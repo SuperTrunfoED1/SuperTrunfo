@@ -20,33 +20,32 @@ public class Main extends Application {
 
     private static String retorno;
 
-    private static User hanking1;
-    private static User hanking2;
-    private static User hanking3;
+    private static User ranking1;
+    private static User ranking2;
+    private static User ranking3;
 
-
-    public static User getHanking1() {
-        return hanking1;
+    public static User getRanking1() {
+        return ranking1;
     }
 
-    public static void setHanking1(User hanking1) {
-        Main.hanking1 = hanking1;
+    public static void setRanking1(User ranking1) {
+        Main.ranking1 = ranking1;
     }
 
-    public static User getHanking2() {
-        return hanking2;
+    public static User getRanking2() {
+        return ranking2;
     }
 
-    public static void setHanking2(User hanking2) {
-        Main.hanking2 = hanking2;
+    public static void setRanking2(User ranking2) {
+        Main.ranking2 = ranking2;
     }
 
-    public static User getHanking3() {
-        return hanking3;
+    public static User getRanking3() {
+        return ranking3;
     }
 
-    public static void setHanking3(User hanking3) {
-        Main.hanking3 = hanking3;
+    public static void setRanking3(User ranking3) {
+        Main.ranking3 = ranking3;
     }
 
     public static String getRetorno() {
@@ -56,7 +55,6 @@ public class Main extends Application {
     public static void setRetorno(String retorno) {
         Main.retorno = retorno;
     }
-
 
     public static Stage getpS() {
         return pS;

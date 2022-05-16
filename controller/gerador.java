@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import src.Main;
 
 public class gerador implements Initializable {
-    
+
     @FXML
     private ImageView ImgPrimeiro;
 
@@ -32,13 +32,11 @@ public class gerador implements Initializable {
     @FXML
     private Label nomeJogadorMsg;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       
+
         NomeJogador.setText(Main.getRetorno());
         nomeJogadorMsg.setText(Main.getRetorno());
-
 
         User usuario = new User();
         usuario.setNickname(Main.getRetorno());
@@ -49,19 +47,18 @@ public class gerador implements Initializable {
             e.printStackTrace();
         }
 
-        if (usuario.getNickname().equals(Main.getHanking1().getNickname())) {
+        if (usuario.getNickname().equals(Main.getRanking1().getNickname())) {
             ImgPrimeiro.setVisible(true);
-        }else if (usuario.getNickname().equals(Main.getHanking2().getNickname())) {
+        } else if (usuario.getNickname().equals(Main.getRanking2().getNickname())) {
             imgSegundo.setVisible(true);
-        }else if (usuario.getNickname().equals(Main.getHanking3().getNickname())) {
+        } else if (usuario.getNickname().equals(Main.getRanking3().getNickname())) {
             imgTerceiro.setVisible(true);
         }
-        
+
         pontosJogador.setText(usuario.getScore().toString() + " Pt");
-        
-        
+
     }
-    
+
     @FXML
     void voltar(ActionEvent event) throws IOException {
         Main.telaMainMenu();
@@ -72,5 +69,4 @@ public class gerador implements Initializable {
         Main.telaCriarCarta();
     }
 
-    
 }
