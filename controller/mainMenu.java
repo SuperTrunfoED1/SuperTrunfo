@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
-import game.User;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import src.Main;
+import model.User;
 import util.Lista;
+import view.src.Main;
 
 public class mainMenu implements Initializable {
 

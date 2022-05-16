@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import game.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,7 +16,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import src.Main;
+import model.User;
+import view.src.Main;
 
 public class login {
 

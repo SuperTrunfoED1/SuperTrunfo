@@ -50,7 +50,7 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="266.0" layoutY="348.0" mnemonicParsing="false" onAction="#criar" prefHeight="45.0" prefWidth="142.0" style="-fx-background-color: D7A865; -fx-cursor: hand;" text="Crirar" textAlignment="CENTER" textFill="#ba643f">
+                  <Button layoutX="266.0" layoutY="348.0" mnemonicParsing="false" onAction="#criar" prefHeight="45.0" prefWidth="142.0" style="-fx-background-color: D7A865; -fx-cursor: hand;" text="Criar" textAlignment="CENTER" textFill="#ba643f">
                      <font>
                         <Font name="Arial Black" size="20.0" />
                      </font>

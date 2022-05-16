@@ -2,7 +2,7 @@ package util;
 
 
 
-import game.User;
+import model.User;
 
 public class Testador {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package game;
+package model;
 
 import util.Lista;
 import util.ListaInterface;

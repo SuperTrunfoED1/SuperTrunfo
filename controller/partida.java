@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import src.Main;
+import view.src.Main;
 
 public class partida implements Initializable {
     

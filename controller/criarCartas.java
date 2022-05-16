@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import src.Main;
+import view.src.Main;
 
 public class criarCartas {
 
