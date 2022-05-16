@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.Set;
 
 import game.User;
 import javafx.event.ActionEvent;
@@ -42,17 +41,15 @@ public class login {
     @FXML
     void autenticar(ActionEvent event) throws IOException {
 
-       
         Main.setRetorno(usuario.getText());
-        
+
         User user = new User();
         user.setNickname(usuario.getText());
         user.setSenha(senha.getText());
 
         if (user.autenticar(user)) {
-            
+
             Main.telaMainMenu();
-           
 
         } else {
             msgIncorreto.setVisible(true);

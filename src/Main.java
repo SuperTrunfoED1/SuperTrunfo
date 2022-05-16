@@ -2,6 +2,7 @@ package src;
 
 import java.io.IOException;
 
+import game.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,35 @@ public class Main extends Application {
 
     private static String retorno;
 
+    private static User hanking1;
+    private static User hanking2;
+    private static User hanking3;
+
+
+    public static User getHanking1() {
+        return hanking1;
+    }
+
+    public static void setHanking1(User hanking1) {
+        Main.hanking1 = hanking1;
+    }
+
+    public static User getHanking2() {
+        return hanking2;
+    }
+
+    public static void setHanking2(User hanking2) {
+        Main.hanking2 = hanking2;
+    }
+
+    public static User getHanking3() {
+        return hanking3;
+    }
+
+    public static void setHanking3(User hanking3) {
+        Main.hanking3 = hanking3;
+    }
+
     public static String getRetorno() {
         return retorno;
     }
@@ -26,6 +56,7 @@ public class Main extends Application {
     public static void setRetorno(String retorno) {
         Main.retorno = retorno;
     }
+
 
     public static Stage getpS() {
         return pS;

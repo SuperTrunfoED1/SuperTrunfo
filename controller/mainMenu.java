@@ -2,20 +2,15 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
-
 import game.User;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import src.Main;
 import util.Lista;
-import util.ListaInterface;
 
 public class mainMenu implements Initializable {
 
@@ -45,12 +40,14 @@ public class mainMenu implements Initializable {
         NomeJogador.setText(nomeUser);
     }
 
-    @Override // 
+    @Override //
     public void initialize(URL location, ResourceBundle resources) {
+
+        NomeJogador.setText(Main.getRetorno());
+
         User usuario = new User();
         Lista<User> ListaUsuarios = new Lista<User>();
-        
-        
+
         try {
             ListaUsuarios = usuario.buscarTodos();
         } catch (IOException e) {
@@ -58,37 +55,56 @@ public class mainMenu implements Initializable {
             e.printStackTrace();
         }
 
-        Integer scoreTemp = 0;
-        Integer scoreTemp2 = 0;
-        Integer scoreTemp3 = 0;
-        // jeito de ler do arquivo e comparar ?
-        for (int i = 0; i < ListaUsuarios.size; i++) {
-        
-            if (ListaUsuarios.peekFirst().getScore() > scoreTemp ) {
-                usuario = ListaUsuarios.shift();
-                scoreTemp = usuario.getScore();
-                
-                NomePrimeiro.setText(usuario.getNickname().toString());
-                primeiro.setText(scoreTemp.toString());  // colcoando valor que foi lido                
-            }
-
-            if (ListaUsuarios.peekFirst().getScore() > scoreTemp ) {
-                usuario = ListaUsuarios.shift();
-                scoreTemp = usuario.getScore();
-        
-                NomeSegundo.setText(usuario.getNickname().toString());
-                segundo.setText(scoreTemp.toString());                
-            }
-
-            if (ListaUsuarios.peekFirst().getScore() > scoreTemp ) {
-                usuario = ListaUsuarios.shift();
-                scoreTemp = usuario.getScore();
-
-                NomeTerceiro.setText(usuario.getNickname().toString());
-                terceiro.setText(scoreTemp.toString());                
-            }
+        int sizeCorreto = ListaUsuarios.size;
+        LinkedList<User> listaParaHanking = new LinkedList<>();
+        for (int i = 0; i < sizeCorreto; i++) {
+            listaParaHanking.add(ListaUsuarios.shift());
         }
-         
+
+        // 1º colocado
+        User hanking = new User();
+        for (User user : listaParaHanking) {
+            if (hanking.getScore() <= user.getScore()) {
+                hanking = user;
+            }
+
+        }
+
+        Main.setHanking1(hanking);
+        listaParaHanking.remove(hanking);
+
+        NomePrimeiro.setText(hanking.getNickname());
+        primeiro.setText(hanking.getScore().toString() + " Pt");
+
+        // 2º colocado
+        hanking.setScore(0);
+        for (User user : listaParaHanking) {
+            if (hanking.getScore() <= user.getScore()) {
+                hanking = user;
+            }
+
+        }
+        Main.setHanking2(hanking);
+        listaParaHanking.remove(hanking);
+
+        NomeSegundo.setText(hanking.getNickname());
+        segundo.setText(hanking.getScore().toString() + " Pt");
+
+        // 3º colocado
+        hanking.setScore(0);
+        for (User user : listaParaHanking) {
+            if (hanking.getScore() <= user.getScore()) {
+                hanking = user;
+            }
+
+        }
+
+        Main.setHanking3(hanking);
+        listaParaHanking.remove(hanking);
+
+        NomeTerceiro.setText(hanking.getNickname());
+        terceiro.setText(hanking.getScore().toString() + " Pt");
+
     }
 
     @FXML

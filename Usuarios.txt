@@ -1,4 +1,8 @@
 Felipe,123,10
-Felipee,1,20
-Julia,a,60
+Raimundo,123,20
+Julia,123,60
 Joao,123,1000
+Emilio,123,0
+Jonas,123,0
+Romeu,123,0
+Juliana,123,0

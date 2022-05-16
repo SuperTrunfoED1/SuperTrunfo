@@ -6,7 +6,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -36,7 +35,7 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="84.0" layoutY="75.0" prefHeight="17.0" prefWidth="280.0" text="Ricfardo," textFill="WHITE">
+                  <Label fx:id="nomeJogadorMsg" alignment="CENTER" layoutX="84.0" layoutY="75.0" prefHeight="17.0" prefWidth="280.0" textFill="WHITE">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -65,29 +64,39 @@
             </ImageView>
          </children>
       </Pane>
-      <VBox alignment="TOP_CENTER" layoutX="38.0" layoutY="16.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
+      <Button layoutX="1098.0" layoutY="53.0" mnemonicParsing="false" onAction="#voltar" prefHeight="44.0" prefWidth="116.0" style="-fx-background-color: D7A865; -fx-background-radius: 10; -fx-cursor: hand;" text="Voltar" textFill="#fafafa">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Button>
+      <Pane layoutX="47.0" layoutY="53.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
          <children>
-            <Label prefHeight="38.0" prefWidth="99.0" text="Ricfardo" textFill="WHITE">
+            <Label fx:id="NomeJogador" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" prefHeight="38.0" prefWidth="99.0" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="21.0" />
                </font>
             </Label>
-            <ImageView fitHeight="23.0" fitWidth="23.0">
+            <ImageView fx:id="ImgPrimeiro" fitHeight="23.0" fitWidth="23.0" layoutX="61.0" layoutY="37.0" visible="false">
                <image>
                   <Image url="@assets/primeiro.png" />
                </image>
             </ImageView>
-            <Label prefHeight="30.0" prefWidth="76.0" text="1000 Pt" textFill="WHITE">
+            <ImageView fx:id="imgSegundo" fitHeight="23.0" fitWidth="23.0" layoutX="61.0" layoutY="37.0" visible="false">
+               <image>
+                  <Image url="@assets/segundo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgTerceiro" fitHeight="23.0" fitWidth="23.0" layoutX="61.0" layoutY="37.0" visible="false">
+               <image>
+                  <Image url="@assets/terceiro.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pontosJogador" alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="60.0" prefHeight="30.0" prefWidth="76.0" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="17.0" />
                </font>
             </Label>
          </children>
-      </VBox>
-      <Button layoutX="1099.0" layoutY="38.0" mnemonicParsing="false" onAction="#voltar" prefHeight="44.0" prefWidth="116.0" style="-fx-background-color: D7A865; -fx-background-radius: 10; -fx-cursor: hand;" text="Voltar" textFill="#fafafa">
-         <font>
-            <Font name="Arial Black" size="20.0" />
-         </font>
-      </Button>
+      </Pane>
    </children>
 </AnchorPane>
