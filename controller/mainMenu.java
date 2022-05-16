@@ -42,13 +42,14 @@ public class mainMenu implements Initializable {
 
     @FXML
     public void receberLogin(String nomeUser) {
-        this.NomeJogador.setText(nomeUser);
+        NomeJogador.setText(nomeUser);
     }
 
-    @Override
+    @Override // 
     public void initialize(URL location, ResourceBundle resources) {
         User usuario = new User();
         Lista<User> ListaUsuarios = new Lista<User>();
+        
         
         try {
             ListaUsuarios = usuario.buscarTodos();
@@ -57,13 +58,34 @@ public class mainMenu implements Initializable {
             e.printStackTrace();
         }
 
-        int scoreTemp = 0;
+        Integer scoreTemp = 0;
+        Integer scoreTemp2 = 0;
+        Integer scoreTemp3 = 0;
+        // jeito de ler do arquivo e comparar ?
         for (int i = 0; i < ListaUsuarios.size; i++) {
         
             if (ListaUsuarios.peekFirst().getScore() > scoreTemp ) {
                 usuario = ListaUsuarios.shift();
                 scoreTemp = usuario.getScore();
                 
+                NomePrimeiro.setText(usuario.getNickname().toString());
+                primeiro.setText(scoreTemp.toString());  // colcoando valor que foi lido                
+            }
+
+            if (ListaUsuarios.peekFirst().getScore() > scoreTemp ) {
+                usuario = ListaUsuarios.shift();
+                scoreTemp = usuario.getScore();
+        
+                NomeSegundo.setText(usuario.getNickname().toString());
+                segundo.setText(scoreTemp.toString());                
+            }
+
+            if (ListaUsuarios.peekFirst().getScore() > scoreTemp ) {
+                usuario = ListaUsuarios.shift();
+                scoreTemp = usuario.getScore();
+
+                NomeTerceiro.setText(usuario.getNickname().toString());
+                terceiro.setText(scoreTemp.toString());                
             }
         }
          
