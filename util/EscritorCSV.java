@@ -6,11 +6,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import model.User;
-
 public class EscritorCSV {
 
-    public void escrever(String path, ListaInterface<User> lista) throws IOException {
+    public <T> void escrever(String path, ListaInterface<T> lista) throws IOException {
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
         String texto = "";
