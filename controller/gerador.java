@@ -47,13 +47,15 @@ public class gerador implements Initializable {
             e.printStackTrace();
         }
 
-        if (usuario.getNickname().equals(Main.getRanking1().getNickname())) {
-            ImgPrimeiro.setVisible(true);
-        } else if (usuario.getNickname().equals(Main.getRanking2().getNickname())) {
-            imgSegundo.setVisible(true);
-        } else if (usuario.getNickname().equals(Main.getRanking3().getNickname())) {
-            imgTerceiro.setVisible(true);
-        }
+        if (
+            usuario.getNickname().equals(Main.getRanking1().getNickname()) && Main.getRanking1() != null
+            ) { ImgPrimeiro.setVisible(true); } 
+        else if (
+            usuario.getNickname().equals(Main.getRanking2().getNickname()) && Main.getRanking2() != null
+            ) { imgSegundo.setVisible(true); } 
+        else if (
+            usuario.getNickname().equals(Main.getRanking3().getNickname()) && Main.getRanking3() != null
+            ) { imgTerceiro.setVisible(true); }
 
         pontosJogador.setText(usuario.getScore().toString() + " Pt");
 

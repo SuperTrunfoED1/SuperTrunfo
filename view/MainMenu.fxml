@@ -25,7 +25,7 @@
       </ImageView>
       <Pane layoutX="344.0" layoutY="572.0" prefHeight="102.0" prefWidth="600.0" style="-fx-background-color: #828282; -fx-background-radius: 7;">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="28.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+            <VBox fx:id="caixaRanking1" alignment="TOP_CENTER" layoutX="28.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
                <children>
                   <Label fx:id="NomePrimeiro" alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="139.0" textFill="WHITE">
                      <font>
@@ -44,7 +44,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="228.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+            <VBox fx:id="caixaRanking2" alignment="TOP_CENTER" layoutX="228.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
                <children>
                   <Label fx:id="NomeSegundo" alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="141.0" textFill="WHITE">
                      <font>
@@ -63,7 +63,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" layoutX="428.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
+            <VBox fx:id="caixaRanking3" alignment="TOP_CENTER" layoutX="428.0" layoutY="6.0" prefHeight="90.0" prefWidth="145.0" style="-fx-background-color: #1E1E1E; -fx-background-radius: 7;">
                <children>
                   <Label fx:id="NomeTerceiro" alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="145.0" textFill="WHITE">
                      <font>

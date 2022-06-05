@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import model.User;
 import util.Lista;
 import view.src.Main;
@@ -37,6 +38,15 @@ public class mainMenu implements Initializable {
     private Label terceiro;
 
     @FXML
+    private VBox caixaRanking1;
+
+    @FXML
+    private VBox caixaRanking2;
+
+    @FXML
+    private VBox caixaRanking3;
+
+    @FXML
     public void receberLogin(String nomeUser) {
         NomeJogador.setText(nomeUser);
     }
@@ -47,7 +57,7 @@ public class mainMenu implements Initializable {
         NomeJogador.setText(Main.getRetorno());
 
         User usuario = new User();
-        Lista<User> ListaUsuarios = new Lista<User>();
+        Lista<User> ListaUsuarios;
         ListaUsuarios = usuario.buscarTodos();
 
         int sizeCorreto = ListaUsuarios.size;
@@ -58,24 +68,23 @@ public class mainMenu implements Initializable {
         }
 
         listaParaHanking = shellSort(listaParaHanking);
-
+    
         // 1º colocado
         Main.setRanking1(listaParaHanking.get(0));
-
         NomePrimeiro.setText(listaParaHanking.get(0).getNickname());
         primeiro.setText(listaParaHanking.get(0).getScore().toString() + " Pt");
 
         // 2º colocado
-        /*Main.setRanking2(listaParaHanking.get(1));
-
-        NomeSegundo.setText(listaParaHanking.get(1).getNickname());
-        segundo.setText(listaParaHanking.get(1).getScore().toString() + " Pt");
+        Main.setRanking2(listaParaHanking.size() > 1 ? listaParaHanking.get(1) : null);
+        caixaRanking2.setVisible(listaParaHanking.size() > 1 ? true : false);
+        NomeSegundo.setText(listaParaHanking.size() > 1 ? listaParaHanking.get(1).getNickname() : "");
+        segundo.setText(listaParaHanking.size() > 1 ? listaParaHanking.get(1).getScore().toString() + " Pt" : "");
 
         // 3º colocado
-        Main.setRanking3(listaParaHanking.get(2));
-
-        NomeTerceiro.setText(listaParaHanking.get(2).getNickname());
-        terceiro.setText(listaParaHanking.get(2).getScore().toString() + " Pt");*/
+        Main.setRanking3(listaParaHanking.size() > 2 ? listaParaHanking.get(2) : null);
+        caixaRanking3.setVisible(listaParaHanking.size() > 2 ? true : false);
+        NomeTerceiro.setText(listaParaHanking.size() > 2 ? listaParaHanking.get(2).getNickname() : "");
+        terceiro.setText(listaParaHanking.size() > 2 ? listaParaHanking.get(2).getScore().toString() + " Pt" : "");
 
     }
 
