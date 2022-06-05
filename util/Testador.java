@@ -1,6 +1,9 @@
 package util;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
+import game.engine;
 import model.CartaTeste;
 
 
@@ -9,22 +12,19 @@ public class Testador {
 
 		
 
-		ListaInterface<CartaTeste> baralho = new Lista<CartaTeste>();
+		engine bar = new engine();
+		CartaTeste carta  =new CartaTeste();
+		LinkedList<CartaTeste> baralho;
+		LinkedList<CartaTeste> embaralhado;
 
-		CartaTeste card = new CartaTeste();
-		
-		card.setId(149);
-		card.setNomeCarta("Sakura");
-		card.setAtaque(800);
-		card.setDefesa(750);
-		card.setPoder(400);
-		
-		baralho.add(card);
 
-		EscritorCSV escrito = new EscritorCSV();
-		escrito.escrever("view/assets/baralhoNaruto.txt", baralho);
-
-		escrito.ler("view/assets/baralhoNaruto.txt");
+		baralho = carta.ler("view/assets/baralhoNaruto.txt");
 	
+		embaralhado = bar.embaralhar(baralho, 16);
+		
+		for (int i = 0; i < embaralhado.size(); i++) {
+			System.out.println(embaralhado.get(i));
+		}
+		
 	}
 }
