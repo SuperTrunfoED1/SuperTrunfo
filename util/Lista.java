@@ -18,7 +18,7 @@ public class Lista<T> implements ListaInterface<T> {
     // atributos
     private Node first;
     private Node last;
-    public int size;
+    private int size;
 
     // ------------------------------
     // construtor
@@ -64,16 +64,37 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public T set(T antigo, T novo) {
-        Node nov = new Node(novo);
-
         if (first != null) {
             Node tmp = first;
 
             while (tmp != null) {
                 if (tmp.content.equals(antigo)) {
-                    tmp.content = nov.content;// atribui o novo nó ao antigo
+                    tmp.content = novo;// atribui o novo nó ao antigo
                     indexar();
                     return antigo;// finaliza o laço e retorna o elemento antigo
+                } else {
+                    tmp = tmp.next;
+                }
+            }
+            indexar();
+            return null;
+        } else {
+            System.out.println("Lista vazia!");
+            return null;
+        }
+    }
+
+    @Override
+    public T set(int index, T novo) {
+        if (first != null) {
+            Node tmp = first;
+
+            while (tmp != null) {
+                if (tmp.index == index) {
+                    T retorno = tmp.content;
+                    tmp.content = novo;// atribui o novo nó ao antigo
+                    indexar();
+                    return retorno;// finaliza o laço e retorna o elemento antigo
                 } else {
                     tmp = tmp.next;
                 }
@@ -300,7 +321,7 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public int size() {
-        return this.size;
+        return size;
     }
 
 }

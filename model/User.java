@@ -129,14 +129,12 @@ public class User implements Serializable {
             linha = bufferedReader.readLine();
             User usuarios = new User();
             if (linha != null) {
-
                 String[] armazena = linha.split(",");
                 usuarios.setNickname(armazena[0]);
                 usuarios.setSenha(armazena[1]);
                 usuarios.setScore(Integer.valueOf(armazena[2]));
 
                 ListaUsuarios.add(usuarios);
-
             }
         }
         bufferedReader.close();

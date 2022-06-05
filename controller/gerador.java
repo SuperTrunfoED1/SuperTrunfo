@@ -43,7 +43,6 @@ public class gerador implements Initializable {
         try {
             usuario = usuario.buscar(usuario);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

@@ -7,14 +7,17 @@ public interface ListaInterface<T> {
     void add(T coisa);//funciona como um addLast, mas retirei o "Last" para reduzir o nome
 
     T set(T antigo, T novo);//altera o elemento
-    
-    T remove(T coisa);
-    
-    T remove(int index);
 
-    T search(int index);
+    T set(int index, T novo);//sobrecarga
+    
+    T remove(T coisa);//remove o elemento
+    
+    T remove(int index);//sobrecarga
 
-    T search(T coisa);
+    T search(T coisa);//busca o elemento
+
+    T search(int index);//sobrecarga
+
 
     T shift();//remove o primeiro nó
 

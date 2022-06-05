@@ -60,34 +60,28 @@ public class mainMenu implements Initializable {
         Lista<User> ListaUsuarios;
         ListaUsuarios = usuario.buscarTodos();
 
-        LinkedList<User> listaParaHanking = new LinkedList<>();
-
-        for (int i = 0; i < ListaUsuarios.size(); i++) {
-            listaParaHanking.add(ListaUsuarios.shift());
-        }
-
-        listaParaHanking = shellSort(listaParaHanking);
+        ListaUsuarios = shellSort(ListaUsuarios);
     
         // 1º colocado
-        Main.setRanking1(listaParaHanking.get(0));
-        NomePrimeiro.setText(listaParaHanking.get(0).getNickname());
-        primeiro.setText(listaParaHanking.get(0).getScore().toString() + " Pt");
+        Main.setRanking1(ListaUsuarios.search(0));
+        NomePrimeiro.setText(ListaUsuarios.search(0).getNickname());
+        primeiro.setText(ListaUsuarios.search(0).getScore().toString() + " Pt");
 
         // 2º colocado
-        Main.setRanking2(listaParaHanking.size() > 1 ? listaParaHanking.get(1) : null);
-        caixaRanking2.setVisible(listaParaHanking.size() > 1 ? true : false);
-        NomeSegundo.setText(listaParaHanking.size() > 1 ? listaParaHanking.get(1).getNickname() : "");
-        segundo.setText(listaParaHanking.size() > 1 ? listaParaHanking.get(1).getScore().toString() + " Pt" : "");
+        Main.setRanking2(ListaUsuarios.size() > 1 ? ListaUsuarios.search(1) : null);
+        caixaRanking2.setVisible(ListaUsuarios.size() > 1 ? true : false);
+        NomeSegundo.setText(ListaUsuarios.size() > 1 ? ListaUsuarios.search(1).getNickname() : "");
+        segundo.setText(ListaUsuarios.size() > 1 ? ListaUsuarios.search(1).getScore().toString() + " Pt" : "");
 
         // 3º colocado
-        Main.setRanking3(listaParaHanking.size() > 2 ? listaParaHanking.get(2) : null);
-        caixaRanking3.setVisible(listaParaHanking.size() > 2 ? true : false);
-        NomeTerceiro.setText(listaParaHanking.size() > 2 ? listaParaHanking.get(2).getNickname() : "");
-        terceiro.setText(listaParaHanking.size() > 2 ? listaParaHanking.get(2).getScore().toString() + " Pt" : "");
+        Main.setRanking3(ListaUsuarios.size() > 2 ? ListaUsuarios.search(2) : null);
+        caixaRanking3.setVisible(ListaUsuarios.size() > 2 ? true : false);
+        NomeTerceiro.setText(ListaUsuarios.size() > 2 ? ListaUsuarios.search(2).getNickname() : "");
+        terceiro.setText(ListaUsuarios.size() > 2 ? ListaUsuarios.search(2).getScore().toString() + " Pt" : "");
 
     }
 
-    public static LinkedList<User> shellSort(LinkedList<User> usuarios) {
+    public static Lista<User> shellSort(Lista<User> usuarios) {
 
         User usu = new User();
         int h = 1;
@@ -102,12 +96,12 @@ public class mainMenu implements Initializable {
         }
 
         for (int i = h; i < usuarios.size(); i++) {
-            usu = usuarios.get(i);
+            usu = usuarios.search(i);
             j = i - h;
 
-            while ((j >= 0) && (usu.getScore() > usuarios.get(j).getScore())) {
+            while ((j >= 0) && (usu.getScore() > usuarios.search(j).getScore())) {
 
-                usuarios.set(j + h, usuarios.get(j));
+                usuarios.set(j + h, usuarios.search(j));
 
                 j = j - h;
 
