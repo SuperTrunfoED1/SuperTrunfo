@@ -70,6 +70,29 @@ public class User implements Serializable {
         }
     }
 
+    // ------------------------------------
+    // metodos
+    public boolean autenticar(User usu) throws IOException {
+        if (usu == null) {
+            System.out.println("Usuário inválido!");
+            return false;
+        } else {
+
+            User usuario = buscar(usu);
+
+            if (usuario != null) {
+                if (usuario.getNickname().equals(usu.getNickname()) && usuario.getSenha().equals(usu.getSenha())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            return false;
+
+        }
+    }
+
     public User buscar(User usu) throws IOException {
 
         ListaInterface<User> ListaUsuarios = new Lista<User>();
@@ -80,16 +103,21 @@ public class User implements Serializable {
 
     }
 
-    public Lista buscarTodos() throws IOException {
+    public Lista buscarTodos()  {
 
         ListaInterface<User> ListaUsuarios = new Lista<User>();
-        ListaUsuarios = ler("Usuarios.txt");
+        try {
+            ListaUsuarios = ler("Usuarios.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
        
        
         return (Lista) ListaUsuarios;
 
     }
-
+   
+    // ler arquivo de usuarios
     public ListaInterface<User> ler(String path) throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
@@ -114,31 +142,6 @@ public class User implements Serializable {
 
         return ListaUsuarios;
     }
-
-
-    // ------------------------------------
-    // metodos
-    public boolean autenticar(User usu) throws IOException {
-        if (usu == null) {
-            System.out.println("Usuário inválido!");
-            return false;
-        } else {
-
-            User usuario = buscar(usu);
-
-            if (usuario != null) {
-                if (usuario.getNickname().equals(usu.getNickname()) && usuario.getSenha().equals(usu.getSenha())) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-            return false;
-
-        }
-    }
-
    
     @Override
     public String toString() {
