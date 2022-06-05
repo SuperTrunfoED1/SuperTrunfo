@@ -60,10 +60,9 @@ public class mainMenu implements Initializable {
         Lista<User> ListaUsuarios;
         ListaUsuarios = usuario.buscarTodos();
 
-        int sizeCorreto = ListaUsuarios.size;
         LinkedList<User> listaParaHanking = new LinkedList<>();
 
-        for (int i = 0; i < sizeCorreto; i++) {
+        for (int i = 0; i < ListaUsuarios.size(); i++) {
             listaParaHanking.add(ListaUsuarios.shift());
         }
 

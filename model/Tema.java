@@ -1,5 +1,8 @@
 package model;
 
+import java.io.IOException;
+
+import util.EscritorCSV;
 import util.Lista;
 
 public class Tema {
@@ -11,6 +14,7 @@ public class Tema {
     public Tema(String nome, Long id) {
         this.nome = nome;
         this.id = id;
+        baralho = null;
     }
 
     public String getNome() {
@@ -39,5 +43,18 @@ public class Tema {
         }else{
             this.id = id;
         }
-    }    
+    } 
+    
+    public void adicionarCarta(Carta carta){
+        baralho.add(carta);
+    }
+
+    public void salvarBaralho() throws IOException{
+        EscritorCSV escritor = new EscritorCSV();
+        String path = "view/assets/";
+        path = path.concat(nome);
+        path = path.concat(".txt");
+        
+        escritor.escrever(path, baralho);
+    }
 }

@@ -15,8 +15,6 @@ public class Carta {
 
     String imgPath;//caminho da imagem do personagem ou objeto da carta
     
-    String bgPath;//caminho da imagem de fundo da carta
-
     String [] nomeAtributo = new String[3];
 
     Double [] valoresAtributo = new Double[3];
@@ -65,20 +63,6 @@ public class Carta {
             System.out.println("O path não pode ser apenas um espaço vazio!");
         }else{
             this.imgPath = imgPath;
-        }
-    }
-
-    public String getBgPath() {
-        return bgPath;
-    }
-    
-    public void setBgPath(String bgPath) {
-        if(bgPath == null){
-            System.out.println("Digita algo!");
-        }else if(bgPath.isBlank()){
-            System.out.println("O path não pode ser apenas um espaço vazio!");
-        }else{
-            this.bgPath = bgPath;
         }
     }
 
