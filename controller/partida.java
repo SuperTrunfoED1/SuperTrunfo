@@ -13,6 +13,66 @@ import view.src.Main;
 public class partida implements Initializable {
 
     @FXML
+    private Label NomeJogador;
+
+    @FXML
+    private Label SelectAtributo1;
+
+    @FXML
+    private Label SelectAtributo2;
+
+    @FXML
+    private Label SelectAtributo3;
+
+    @FXML
+    private Label SelectIA1;
+
+    @FXML
+    private Label SelectIA2;
+
+    @FXML
+    private Label SelectIA3;
+
+    @FXML
+    private Label VS;
+
+    @FXML
+    private Label card1Atributo1;
+
+    @FXML
+    private Label card1Atributo2;
+
+    @FXML
+    private Label card1Atributo3;
+
+    @FXML
+    private Label card2Atributo1;
+
+    @FXML
+    private Label card2Atributo2;
+
+    @FXML
+    private Label card2Atributo3;
+
+    @FXML
+    private Label card3Atributo1;
+
+    @FXML
+    private Label card3Atributo2;
+
+    @FXML
+    private Label card3Atributo3;
+
+    @FXML
+    private Label card4Atributo1;
+
+    @FXML
+    private Label card4Atributo2;
+
+    @FXML
+    private Label card4Atributo3;
+
+    @FXML
     private ImageView imgCard1;
 
     @FXML
@@ -31,10 +91,13 @@ public class partida implements Initializable {
     private Label pontos_jogador;
 
     @FXML
-    private Label NomeJogador;
+    private Label rodada;
 
     @FXML
-    private Label rodada;
+    private ImageView selectimgCard;
+
+    @FXML
+    private ImageView selectimgCardIA;
 
     @FXML
     private Label turno;
