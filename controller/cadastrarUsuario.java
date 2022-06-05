@@ -41,7 +41,7 @@ public class cadastrarUsuario {
             User testeIgual = new User();
             user.setNickname(usuario.getText());
 
-            jaExiste = user.ler("Usuarios.txt");
+            jaExiste = user.ler("view/assets/Usuarios.txt");
             testeIgual = jaExiste.search(user);
 
             if (testeIgual == null) {
@@ -52,7 +52,7 @@ public class cadastrarUsuario {
 
                     lista.add(user);
 
-                    escritor.escrever("Usuarios.txt", lista);
+                    escritor.escrever("view/assets/Usuarios.txt", lista);
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Sucesso");

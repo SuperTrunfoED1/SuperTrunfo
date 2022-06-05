@@ -66,7 +66,7 @@ public class mainMenu implements Initializable {
         primeiro.setText(listaParaHanking.get(0).getScore().toString() + " Pt");
 
         // 2º colocado
-        Main.setRanking2(listaParaHanking.get(1));
+        /*Main.setRanking2(listaParaHanking.get(1));
 
         NomeSegundo.setText(listaParaHanking.get(1).getNickname());
         segundo.setText(listaParaHanking.get(1).getScore().toString() + " Pt");
@@ -75,7 +75,7 @@ public class mainMenu implements Initializable {
         Main.setRanking3(listaParaHanking.get(2));
 
         NomeTerceiro.setText(listaParaHanking.get(2).getNickname());
-        terceiro.setText(listaParaHanking.get(2).getScore().toString() + " Pt");
+        terceiro.setText(listaParaHanking.get(2).getScore().toString() + " Pt");*/
 
     }
 

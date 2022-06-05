@@ -216,7 +216,6 @@ public class Lista<T> implements ListaInterface<T> {
         if (first != null) {
             while (p != null) {
                 if (p.content.equals(criterio)) {
-                    System.out.println();
                     return p.content;
                 }
                 p = p.next;

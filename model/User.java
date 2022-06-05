@@ -81,11 +81,12 @@ public class User implements Serializable {
             User usuario = buscar(usu);
 
             if (usuario != null) {
-                if (usuario.getNickname().equals(usu.getNickname()) && usuario.getSenha().equals(usu.getSenha())) {
+                /*if (usuario.getNickname().equals(usu.getNickname()) && usuario.getSenha().equals(usu.getSenha())) {
                     return true;
                 } else {
                     return false;
-                }
+                }*/
+                return true;
             }
 
             return false;
@@ -96,24 +97,24 @@ public class User implements Serializable {
     public User buscar(User usu) throws IOException {
 
         ListaInterface<User> ListaUsuarios = new Lista<User>();
-        ListaUsuarios = ler("Usuarios.txt");
+        ListaUsuarios = ler("view/assets/Usuarios.txt");
         User usuario = ListaUsuarios.search(usu);
         
         return usuario;
 
     }
 
-    public Lista buscarTodos()  {
+    public Lista<User> buscarTodos()  {
 
         ListaInterface<User> ListaUsuarios = new Lista<User>();
         try {
-            ListaUsuarios = ler("Usuarios.txt");
+            ListaUsuarios = ler("view/assets/Usuarios.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
        
        
-        return (Lista) ListaUsuarios;
+        return (Lista<User>) ListaUsuarios;
 
     }
    
