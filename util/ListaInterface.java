@@ -20,5 +20,7 @@ public interface ListaInterface<T> {
     
     T peekLast();
 
+    int size();
+
     void show();
 }

@@ -1,5 +1,10 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.LinkedList;
+
 public class CartaTeste {
 
     // ----------------------------
@@ -62,6 +67,32 @@ public class CartaTeste {
 
     // ----------------------------
     // metodos
+
+    public LinkedList<CartaTeste> ler(String path) throws IOException {
+
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+        LinkedList<CartaTeste> ListaCartas = new LinkedList<CartaTeste>();
+        String linha = "";
+
+        while (linha != null) {
+            linha = bufferedReader.readLine();
+            CartaTeste carta = new CartaTeste();
+            if (linha != null) {
+
+                String[] armazena = linha.split(",");
+                carta.setId(Integer.valueOf(armazena[0]));
+                carta.setNomeCarta(armazena[1]);
+                carta.setAtaque(Integer.valueOf(armazena[2]));
+                carta.setDefesa(Integer.valueOf(armazena[3]));
+                carta.setPoder(Integer.valueOf(armazena[4]));
+
+                ListaCartas.add(carta);
+            }
+        }
+        bufferedReader.close();
+
+        return ListaCartas;
+    }
 
     // ----------------------------
 }

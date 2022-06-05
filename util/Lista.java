@@ -225,4 +225,9 @@ public class Lista<T> implements ListaInterface<T> {
         return null;
     }
 
+    @Override
+    public int size() {
+        return this.size;
+    }
+
 }

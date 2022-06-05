@@ -1,8 +1,11 @@
 package game;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import model.Carta;
+import model.CartaTeste;
 import model.Tema;
 
 public class engine {
@@ -19,8 +22,21 @@ public class engine {
     // ---------------------------
     // Metodos
 
-    public static List<Carta> embaralhar(List<Carta> cartas) {
-        return cartas;
+    public static LinkedList<CartaTeste> embaralhar(List<CartaTeste> cartas, int numeroDeCartas) {
+
+        LinkedList<CartaTeste> mao = new LinkedList<>();
+        Random gerador = new Random();
+        int gerado;
+
+        for (int i = 0; i < 4; i++) {
+            gerado = gerador.nextInt(numeroDeCartas);
+            if (cartas.get(gerado) != null) {
+                mao.add(cartas.remove(gerado));
+                numeroDeCartas--;
+            }
+        }
+
+        return mao;
     }
 
     public static void escolherAtributo(Carta cartas) {
@@ -31,7 +47,8 @@ public class engine {
 
     }
 
-    public static boolean comparar(Carta jogador, Carta IA) {
+    public static boolean comparar(CartaTeste jogador, CartaTeste IA) {
+        
         return false;
     }
 
@@ -39,11 +56,11 @@ public class engine {
 
     }
 
-    public static void sorteioDeTurnos(Boolean[] carta){
+    public static void sorteioDeTurnos(Boolean[] carta) {
 
     }
 
-    //---------------------------
+    // ---------------------------
 
     public int getFasePontPC0() {
         return fasePontPC0;
