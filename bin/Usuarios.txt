@@ -1,8 +1,0 @@
-Felipe,123,10
-Raimundo,123,20
-Julia,123,60
-Joao,123,1000
-Emilio,123,0
-Jonas,123,0
-Romeu,123,3000
-Juliana,123,0
