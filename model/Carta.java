@@ -1,45 +1,12 @@
 package model;
 
 import util.Lista;
-import util.ListaInterface;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Carta {
     
-    //----------------------------
-    //classe interna
-    
-    class Atributo{
-        String nome;
-        Double valor;
-
-        public Atributo(String nome, Double valor){
-            setNome(nome);
-            setValor(valor);    
-        }
-
-        public Atributo(String nome){
-            setNome(nome);
-            setValor(0.0);    
-        }
-
-        public void setNome(String nome) {
-            if(nome == null){
-                System.out.println("Digita algo!");
-            }else if(nome.isBlank()){
-                System.out.println("O nome não pode ser apenas um espaço vazio!");
-            }else{
-                this.nome = nome;
-            }
-        }
-        public void setValor(Double valor) {
-            if(valor < 0){
-                System.out.println("Valor precisa ser zero ou maior!");
-            }else{
-                this.valor = valor;
-            }
-        }
-    }
-
     //----------------------------
     //atributos
     
@@ -50,9 +17,9 @@ public class Carta {
     
     String bgPath;//caminho da imagem de fundo da carta
 
-    String bgColor;//código hexadecimal da cor de fundo da carta
+    String [] nomeAtributo = new String[3];
 
-    ListaInterface<Atributo> atributos = new Lista<Atributo>();
+    Double [] valoresAtributo = new Double[3];
     
     //----------------------------
     //construtores
@@ -64,6 +31,10 @@ public class Carta {
 
     public Carta(String nomeCarta){  
         setNome(nomeCarta);  
+    }
+
+    public Carta(){  
+
     }
 
     //----------------------------
@@ -111,22 +82,39 @@ public class Carta {
         }
     }
 
-    public String getBgColor() {
-        return bgColor;
-    }
-    
-    public void setBgColor(String bgColor) {
-        if(bgColor == null){
-            System.out.println("Digita algo!");
-        }else if(bgColor.isBlank()){
-            System.out.println("O código da cor não pode ser apenas um espaço vazio!");
-        }else{
-            this.bgColor = bgColor;
-        }
-    }
-
     //----------------------------
     //metodos
     
+    public Lista<Carta> ler(String path) throws IOException {
+
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+        Lista<Carta> ListaCartas = new Lista<Carta>();
+        String linha = "";
+
+        while (linha != null) {
+            linha = bufferedReader.readLine();
+            Carta carta = new Carta();
+            if (linha != null) {
+
+                String[] armazena = linha.split(",");
+                carta.setNome(armazena[0]);
+                carta.setImgPath(armazena[1]);
+                carta.nomeAtributo[0] = armazena[2];
+                carta.valoresAtributo[0] = Double.valueOf(armazena[3]);
+
+                carta.nomeAtributo[1] = armazena[4];
+                carta.valoresAtributo[1] = Double.valueOf(armazena[5]);
+
+                carta.nomeAtributo[2] = armazena[6];
+                carta.valoresAtributo[2] = Double.valueOf(armazena[7]);
+
+                ListaCartas.add(carta);
+            }
+        }
+        bufferedReader.close();
+
+        return ListaCartas;
+    }
+
     //----------------------------
 }

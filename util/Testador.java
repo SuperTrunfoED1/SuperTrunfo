@@ -1,30 +1,17 @@
 package util;
 
 import java.io.IOException;
-import java.util.LinkedList;
-
-import game.engine;
-import model.CartaTeste;
-
 
 public class Testador {
 	public static void main(String[] args) throws IOException {
-
+		Lista<Double> lista = new Lista<Double>();
 		
+		lista.add(22.3);
+		lista.add(109.3);
+		lista.add(6.78);
+		lista.add(11.5);
+		lista.add(33.9);
 
-		engine bar = new engine();
-		CartaTeste carta  =new CartaTeste();
-		LinkedList<CartaTeste> baralho;
-		LinkedList<CartaTeste> embaralhado;
-
-
-		baralho = carta.ler("view/assets/baralhoNaruto.txt");
-	
-		embaralhado = bar.embaralhar(baralho, 16);
-		
-		for (int i = 0; i < embaralhado.size(); i++) {
-			System.out.println(embaralhado.get(i));
-		}
-		
+		System.out.println("Elemento: " + lista.search(3));
 	}
 }

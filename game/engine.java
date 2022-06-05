@@ -1,53 +1,48 @@
 package game;
-
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
-
 import model.Carta;
-import model.CartaTeste;
 import model.Tema;
+import util.Lista;
 
-public class engine {
+public class Engine {
 
-    int fasePontPC0;
-    int fasePontPlayer;
-    int roundWinnedPC;
-    int roundWinnedPlayer;
-    List<Carta> cartasPC;
-    List<Carta> cartasPlayer;
-    Tema cenario;
-    boolean[] turnos;
+    static int fasePontPC0;
+    static int fasePontPlayer;
+    static int roundWinnedPC;
+    static int roundWinnedPlayer;
+    static Lista<Carta> baralho;
+    static Lista<Carta> cartasPC;
+    static Lista<Carta> cartasPlayer;
+    static Tema cenario;
+    static boolean[] turnos;
 
     // ---------------------------
     // Metodos
 
-    public static LinkedList<CartaTeste> embaralhar(List<CartaTeste> cartas, int numeroDeCartas) {
-
-        LinkedList<CartaTeste> mao = new LinkedList<>();
+    public static void iniciar(Lista<Carta> cartas) {
+        
+        baralho = cartas;
         Random gerador = new Random();
-        int gerado;
+        int index;
 
-        for (int i = 0; i < 4; i++) {
-            gerado = gerador.nextInt(numeroDeCartas);
-            if (cartas.get(gerado) != null) {
-                mao.add(cartas.remove(gerado));
-                numeroDeCartas--;
-            }
+        for (int i = 0; i < 5; i++) {
+            index = gerador.nextInt(baralho.size());
+            cartasPC.add(baralho.remove(index));
+
+            index = gerador.nextInt(baralho.size());
+            cartasPlayer.add(baralho.remove(index));    
         }
-
-        return mao;
     }
 
     public static void escolherAtributo(Carta cartas) {
 
     }
 
-    public static void escolherCarta(List<Carta> cartas) {
+    public static void escolherCarta(Lista<Carta> cartas) {
 
     }
 
-    public static boolean comparar(CartaTeste jogador, CartaTeste IA) {
+    public static boolean comparar(Carta jogador, Carta IA) {
         
         return false;
     }
@@ -94,19 +89,19 @@ public class engine {
         this.roundWinnedPlayer = roundWinnedPlayer;
     }
 
-    public List<Carta> getCartasPC() {
+    public Lista<Carta> getCartasPC() {
         return cartasPC;
     }
 
-    public void setCartasPC(List<Carta> cartasPC) {
+    public void setCartasPC(Lista<Carta> cartasPC) {
         this.cartasPC = cartasPC;
     }
 
-    public List<Carta> getCartasPlayer() {
+    public Lista<Carta> getCartasPlayer() {
         return cartasPlayer;
     }
 
-    public void setCartasPlayer(List<Carta> cartasPlayer) {
+    public void setCartasPlayer(Lista<Carta> cartasPlayer) {
         this.cartasPlayer = cartasPlayer;
     }
 

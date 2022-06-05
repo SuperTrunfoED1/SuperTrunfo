@@ -1,8 +1,6 @@
 package util;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -18,22 +16,5 @@ public class EscritorCSV {
         }
         bufferedWriter.append(texto);
         bufferedWriter.close();
-    }
-
-    public ListaInterface<String> ler(String path) throws IOException {
-
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
-        ListaInterface<String> texto = new Lista<String>();
-        String linha = "";
-
-        while (linha != null) {
-            linha = bufferedReader.readLine();
-            if (linha != null) {
-                texto.add(linha);
-            }
-        }
-        bufferedReader.close();
-
-        return texto;
     }
 }

@@ -10,7 +10,11 @@ public interface ListaInterface<T> {
     
     T remove(T coisa);
     
-    T search(T criterio);
+    T remove(int index);
+
+    T search(int index);
+
+    T search(T coisa);
 
     T shift();//remove o primeiro nó
 
@@ -23,4 +27,6 @@ public interface ListaInterface<T> {
     int size();
 
     void show();
+
+    void indexar();
 }

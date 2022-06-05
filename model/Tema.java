@@ -1,17 +1,16 @@
 package model;
 
+import util.Lista;
+
 public class Tema {
 
     String nome;
     Long id;
-    String bgImgPath;//caminho da imagem para o tema do cenario
-    String bgColor;//código hexadecimal da cor do cenario
+    Lista<Carta> baralho;
 
-    public Tema(String nome, Long id, String bgImgPath, String bgColor) {
+    public Tema(String nome, Long id) {
         this.nome = nome;
         this.id = id;
-        this.bgImgPath = bgImgPath;
-        this.bgColor = bgColor;
     }
 
     public String getNome() {
@@ -40,37 +39,5 @@ public class Tema {
         }else{
             this.id = id;
         }
-    }
-
-    public String getBgImgPath() {
-        return bgImgPath;
-    }
-
-    public void setBgImgPath(String bgImgPath) {
-        if(bgImgPath == null){
-            System.out.println("Digite o path");
-        }else if(bgImgPath.isBlank()){
-            System.out.println("O path não pode ser vazio");
-        }else{
-            this.bgImgPath = bgImgPath;
-        }
-    }
-
-    public String getBgColor() {
-        return bgColor;
-    }
-
-    public void setBgColor(String bgColor) {
-        if(bgColor == null){
-            System.out.println("Digite o path");
-        }else if(bgColor.isBlank()){
-            System.out.println("O path não pode ser vazio");
-        }else{
-            this.bgColor = bgColor;
-        }
-    }
-
-    
-
-    
+    }    
 }

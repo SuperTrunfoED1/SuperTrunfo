@@ -5,6 +5,7 @@ public class Lista<T> implements ListaInterface<T> {
         Node next;
         Node before;
         T content;
+        int index;
 
         public Node(T cont) {
             content = cont;
@@ -17,7 +18,7 @@ public class Lista<T> implements ListaInterface<T> {
     // atributos
     private Node first;
     private Node last;
-    public Integer size;
+    public int size;
 
     // ------------------------------
     // construtor
@@ -32,7 +33,7 @@ public class Lista<T> implements ListaInterface<T> {
     @Override
     public void addFirst(T cont) {
         Node novo = new Node(cont);
-
+        
         if (first == null) {
             first = novo;
             last = novo;
@@ -41,13 +42,14 @@ public class Lista<T> implements ListaInterface<T> {
             novo.next = first;
             first = novo;
         }
+        indexar();
         size++;
     }
 
     @Override
     public void add(T cont) {// a.k.a. addLast
         Node novo = new Node(cont);
-
+        
         if (last == null) {
             first = novo;
             last = novo;
@@ -56,6 +58,7 @@ public class Lista<T> implements ListaInterface<T> {
             novo.before = last;
             last = novo;
         }
+        indexar();
         size++;
     }
 
@@ -69,17 +72,18 @@ public class Lista<T> implements ListaInterface<T> {
             while (tmp != null) {
                 if (tmp.content.equals(antigo)) {
                     tmp.content = nov.content;// atribui o novo nó ao antigo
+                    indexar();
                     return antigo;// finaliza o laço e retorna o elemento antigo
                 } else {
                     tmp = tmp.next;
                 }
             }
+            indexar();
             return null;
         } else {
             System.out.println("Lista vazia!");
             return null;
         }
-
     }
 
     @Override
@@ -117,8 +121,48 @@ public class Lista<T> implements ListaInterface<T> {
                     tmp = tmp.next;
                 }
             }
+            indexar();
         }
+        return retorno;
+    }
 
+    @Override
+    public T remove(int index) {
+        T retorno = null;
+
+        if (first == null) {
+            System.out.println("Lista vazia!");
+        } else if ((first == last) && (first.index == index) ) {
+            retorno = first.content;
+
+            first = null;
+            last = null;
+
+            size--;
+        } else if (first.index == index) {
+            retorno = shift();
+        } else if (last.index == index) {
+            retorno = pop();
+        } else {
+            Node tmp = first;
+
+            while (tmp != null) {
+                if (tmp.index == index) {
+                    retorno = tmp.content;
+
+                    tmp.before.next = tmp.next;
+                    tmp.next.before = tmp.before;
+                    tmp.next = null;
+                    tmp.before = null;
+
+                    size--;
+                    break;
+                } else {
+                    tmp = tmp.next;
+                }
+            }
+            indexar();
+        }
         return retorno;
     }
 
@@ -163,6 +207,20 @@ public class Lista<T> implements ListaInterface<T> {
     }
 
     @Override
+    public void indexar() {// método utilizado para atualizar os indices
+        Node tmp = first;
+        int i = 0;
+
+        if (tmp != null) {
+            while (tmp != null) {
+                tmp.index = i;
+                tmp = tmp.next;
+                i += 1;
+            }
+        } 
+    }
+
+    @Override
     public T pop() {
         T removido = null;
 
@@ -182,7 +240,7 @@ public class Lista<T> implements ListaInterface<T> {
                 size--;
             }
         }
-
+        indexar();
         return removido;
     }
 
@@ -206,7 +264,7 @@ public class Lista<T> implements ListaInterface<T> {
                 size--;
             }
         }
-
+        indexar();
         return removido;
     }
 
@@ -216,6 +274,21 @@ public class Lista<T> implements ListaInterface<T> {
         if (first != null) {
             while (p != null) {
                 if (p.content.equals(criterio)) {
+                    return p.content;
+                }
+                p = p.next;
+            }
+        }
+
+        return null;
+    }
+
+    public T search(int index) {
+        Node p = first; // ponteiro temporario
+
+        if (first != null) {
+            while (p != null) {
+                if (p.index == index) {
                     return p.content;
                 }
                 p = p.next;
