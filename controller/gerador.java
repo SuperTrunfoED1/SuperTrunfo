@@ -67,7 +67,11 @@ public class gerador implements Initializable {
 
     @FXML
     void criar(ActionEvent event) throws IOException {
-        Main.telaCriarCarta();
+        Main.telaCriarCartaETema();
     }
 
+    @FXML
+    void selecionar(ActionEvent event) throws IOException {
+        Main.telaCriarCartaSelecTema();
+    }
 }

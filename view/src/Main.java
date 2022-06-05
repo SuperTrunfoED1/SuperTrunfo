@@ -95,9 +95,17 @@ public class Main extends Application {
         pS.setScene(cena);
     }
 
-    public static void telaCriarCarta() throws IOException {
+    public static void telaCriarCartaETema() throws IOException {
 
-        Parent root = FXMLLoader.load(Main.class.getResource("/view/CriarCartas.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("/view/CriarCartaeTema.fxml"));
+        Scene cena = new Scene(root);
+        pS.setTitle("Criar Carta");
+        pS.setScene(cena);
+    }
+
+    public static void telaCriarCartaSelecTema() throws IOException {
+
+        Parent root = FXMLLoader.load(Main.class.getResource("/view/CriarCartaSelecTema.fxml"));
         Scene cena = new Scene(root);
         pS.setTitle("Criar Carta");
         pS.setScene(cena);
