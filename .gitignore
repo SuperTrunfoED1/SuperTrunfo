@@ -21,7 +21,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-replay_pid*
 
 # Local History for Visual Studio Code
 .history/
@@ -31,5 +30,3 @@ replay_pid*
 
 .vscode/
 javafx-sdk-17.0.0.1/
-.vscode/launch.json
-.vscode/settings.json
