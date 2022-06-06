@@ -33,45 +33,6 @@ public class Engine {
             index = gerador.nextInt(baralho.size());
             cartasPlayer.add(baralho.remove(index));
 
-            int  aux = 0;
-            
-            while(aux < 3)
-            {
-            	Carta carta_jogador = new Carta();
-            	Carta carta_pc = new Carta();
-            	
-            	System.out.println("IA");
-            	
-            	carta_pc.setValoresAtributo(cartasPC.search(aux).getValoresAtributo());
-            	
-            	System.out.println("JOGADOR");
-            	
-            	
-            	if(comparar(carta_jogador, carta_pc))
-            	{
-            		fasePontPlayer++;
-            	}
-            	else
-            	{
-            		fasePontPC0++;
-            	}
-            	aux++;
-            }
-            if(fasePontPlayer != fasePontPC0)
-            {
-            	if(fasePontPlayer > fasePontPC0)
-            	{
-            		turnos[i] = true; // jogador ganha ponto
-            	}
-            	else 
-            	{
-            		turnos[i] = false; // IA ganha ponto
-            	}
-            }
-            else 
-            {
-            	turnos[i] = true; // Ambos ganham ponto
-            }
         }
     }
 

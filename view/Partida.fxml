@@ -166,7 +166,7 @@
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
                </effect>
             </Pane>
-            <Pane fx:id="paneSeletorAtributo" layoutX="76.0" layoutY="59.0" prefHeight="552.0" prefWidth="808.0" style="-fx-background-color: #000000;">
+            <Pane fx:id="paneSeletorAtributo" layoutX="76.0" layoutY="59.0" prefHeight="552.0" prefWidth="808.0" style="-fx-background-color: #000000;" visible="false">
                <children>
                   <ImageView fitHeight="552.0" fitWidth="808.0" pickOnBounds="true">
                      <image>
@@ -185,23 +185,27 @@
                   </ImageView>
                   <Pane layoutX="39.0" layoutY="109.0" prefHeight="363.0" prefWidth="280.0" style="-fx-background-color: #59B24A;">
                      <children>
-                        <Label fx:id="SelectAtributo1" alignment="CENTER" layoutX="41.0" layoutY="216.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 1">
+                        <Label fx:id="SelectAtributo1" alignment="CENTER" layoutX="11.0" layoutY="224.0" onMouseClicked="#clickAtributo1" prefHeight="32.0" prefWidth="260.0" style="-fx-border-color: #000000; -fx-cursor: hand;" text="Atributo 1">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="SelectAtributo2" alignment="CENTER" layoutX="41.0" layoutY="250.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 2">
+                        <Label fx:id="SelectAtributo2" alignment="CENTER" layoutX="11.0" layoutY="258.0" onMouseClicked="#clickAtributo2" prefHeight="32.0" prefWidth="260.0" style="-fx-border-color: #000000; -fx-cursor: hand;" text="Atributo 2">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="SelectAtributo3" alignment="CENTER" layoutX="41.0" layoutY="284.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 3">
+                        <Label fx:id="SelectAtributo3" alignment="CENTER" layoutX="11.0" layoutY="292.0" onMouseClicked="#clickAtributo3" prefHeight="32.0" prefWidth="260.0" style="-fx-border-color: #000000; -fx-cursor: hand;" text="Atributo 3">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="225.0" layoutY="333.0" prefHeight="24.0" prefWidth="41.0" text="IdCard" />
-                        <ImageView fx:id="selectimgCard" fitHeight="130.0" fitWidth="130.0" layoutX="75.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="selectimgCard" fitHeight="130.0" fitWidth="130.0" layoutX="75.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="nomeCardSelect" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="253.0" text="Nome Personagem">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                   <Label fx:id="VS" layoutX="377.0" layoutY="244.0" text="VS" textFill="RED" visible="false">
@@ -209,27 +213,36 @@
                         <Font name="System Bold" size="44.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="486.0" layoutY="109.0" prefHeight="363.0" prefWidth="280.0" style="-fx-background-color: #59B24A;" visible="false">
+                  <Pane fx:id="paneCardIA" layoutX="486.0" layoutY="109.0" prefHeight="363.0" prefWidth="280.0" style="-fx-background-color: #59B24A;" visible="false">
                      <children>
-                        <ImageView fx:id="selectimgCardIA" fitHeight="156.0" fitWidth="232.0" layoutX="24.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="SelectIA1" alignment="CENTER" layoutX="41.0" layoutY="216.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 1">
+                        <ImageView fx:id="selectimgCardIA" fitHeight="130.0" fitWidth="130.0" layoutX="76.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="SelectIA1" alignment="CENTER" layoutX="11.0" layoutY="226.0" prefHeight="32.0" prefWidth="260.0" style="-fx-border-color: #000000;" text="Atributo 1">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="SelectIA2" alignment="CENTER" layoutX="41.0" layoutY="250.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 2">
+                        <Label fx:id="SelectIA2" alignment="CENTER" layoutX="11.0" layoutY="260.0" prefHeight="32.0" prefWidth="260.0" style="-fx-border-color: #000000;" text="Atributo 2">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="SelectIA3" alignment="CENTER" layoutX="41.0" layoutY="284.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 3">
+                        <Label fx:id="SelectIA3" alignment="CENTER" layoutX="11.0" layoutY="294.0" prefHeight="32.0" prefWidth="260.0" style="-fx-border-color: #000000;" text="Atributo 3">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="229.0" layoutY="331.0" prefHeight="24.0" prefWidth="41.0" text="IdCard" />
+                        <Label fx:id="nomeCardSelectIA" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="30.0" prefWidth="253.0" text="Nome Personagem">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
+                  <Button fx:id="proximaPart" alignment="CENTER" contentDisplay="CENTER" layoutX="311.0" layoutY="495.0" mnemonicParsing="false" onAction="#proximaPartida" prefHeight="43.0" prefWidth="185.0" style="-fx-background-color: D7A865; -fx-background-radius: 7; -fx-cursor: hand;" text="Proxima Rodada" textFill="#ba643f" visible="false">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>
