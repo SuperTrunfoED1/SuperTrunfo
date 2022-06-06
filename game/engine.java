@@ -1,5 +1,4 @@
 package game;
-
 import java.util.Random;
 import model.Carta;
 import model.Tema;
@@ -7,13 +6,13 @@ import util.Lista;
 
 public class Engine {
 
-    static int fasePontPC0 = 0;
-    static int fasePontPlayer = 0;
-    static int roundWinnedPC = 0;
-    static int roundWinnedPlayer = 0;
+    static int fasePontPC0;
+    static int fasePontPlayer;
+    static int roundWinnedPC;
+    static int roundWinnedPlayer;
     static Lista<Carta> baralho;
-    static Lista<Carta> cartasPC = new Lista<>();
-    static Lista<Carta> cartasPlayer = new Lista<>();
+    static Lista<Carta> cartasPC;
+    static Lista<Carta> cartasPlayer;
     static Tema cenario;
     static boolean[] turnos;
 
@@ -21,7 +20,7 @@ public class Engine {
     // Metodos
 
     public static void iniciar(Lista<Carta> cartas) {
-
+        
         baralho = cartas;
         Random gerador = new Random();
         int index;
@@ -31,7 +30,7 @@ public class Engine {
             cartasPC.add(baralho.remove(index));
 
             index = gerador.nextInt(baralho.size());
-            cartasPlayer.add(baralho.remove(index));
+            cartasPlayer.add(baralho.remove(index));    
         }
     }
 
@@ -44,7 +43,7 @@ public class Engine {
     }
 
     public static boolean comparar(Carta jogador, Carta IA) {
-
+        
         return false;
     }
 
