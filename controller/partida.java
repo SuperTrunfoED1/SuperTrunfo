@@ -141,6 +141,12 @@ public class partida implements Initializable {
     @FXML
     private Pane disibleCard4;
 
+    @FXML
+    private Label nomeVencedor;
+    
+    @FXML
+    private Label WIN;
+
 
     @FXML
     void sair(ActionEvent event) throws IOException {
@@ -149,13 +155,31 @@ public class partida implements Initializable {
 
     @FXML
     void proximaPartida(ActionEvent event) throws IOException {
+        
         paneSeletorAtributo.setVisible(false);
         paneCardIA.setVisible(false);
+        
         VS.setVisible(false);
+        
         proximaPart.setVisible(false);
+
         SelectIA1.setDisable(false);
         SelectIA2.setDisable(false);
         SelectIA3.setDisable(false);
+
+        nomeVencedor.setVisible(false);
+        WIN.setVisible(false);
+
+        pontos_ia.setText(String.valueOf(partida.getFasePontPC0()));
+        pontos_jogador.setText(String.valueOf(partida.getFasePontPlayer()));
+
+        winIA.setText(String.valueOf(partida.getRoundWinnedPC()));
+        winJogador.setText(String.valueOf(partida.getRoundWinnedPlayer()));
+
+        rodada.setText(String.valueOf(partida.getRoundWinnedPC()+partida.getRoundWinnedPlayer()));
+
+
+        
 
     }
 
@@ -301,8 +325,17 @@ public class partida implements Initializable {
         SelectIA2.setDisable(true);
         SelectIA3.setDisable(true);
 
-        partida.comparar(cartaSelecionadaUsuario,maoIA.search(sorteado), 0);
+        boolean compara = partida.comparar(cartaSelecionadaUsuario,maoIA.search(sorteado), 0);
 
+        if (compara) {
+            nomeVencedor.setVisible(true);
+            nomeVencedor.setText(NomeJogador.getText());
+            WIN.setVisible(true);
+        }else{
+            nomeVencedor.setVisible(true);
+            nomeVencedor.setText("I.A.");
+            WIN.setVisible(true);
+        }
         maoIA.remove(sorteado);
 
     
@@ -327,6 +360,18 @@ public class partida implements Initializable {
         SelectIA3.setText(maoIA.search(sorteado).getNomeAtributo()[2]+": "+maoIA.search(sorteado).getValoresAtributo()[2]);
         SelectIA1.setDisable(true);
         SelectIA3.setDisable(true);
+
+        boolean compara = partida.comparar(cartaSelecionadaUsuario,maoIA.search(sorteado), 1);
+
+        if (compara) {
+            nomeVencedor.setVisible(true);
+            nomeVencedor.setText(NomeJogador.getText());
+            WIN.setVisible(true);
+        }else{
+            nomeVencedor.setVisible(true);
+            nomeVencedor.setText("I.A.");
+            WIN.setVisible(true);
+        }
         maoIA.remove(sorteado);
         
 
@@ -350,6 +395,18 @@ public class partida implements Initializable {
         SelectIA3.setText(maoIA.search(sorteado).getNomeAtributo()[2]+": "+maoIA.search(sorteado).getValoresAtributo()[2]);
         SelectIA1.setDisable(true);
         SelectIA2.setDisable(true);
+
+        boolean compara = partida.comparar(cartaSelecionadaUsuario,maoIA.search(sorteado), 2);
+
+        if (compara) {
+            nomeVencedor.setVisible(true);
+            nomeVencedor.setText(NomeJogador.getText());
+            WIN.setVisible(true);
+        }else{
+            nomeVencedor.setVisible(true);
+            nomeVencedor.setText("I.A.");
+            WIN.setVisible(true);
+        }
         maoIA.remove(sorteado);
 
     }
