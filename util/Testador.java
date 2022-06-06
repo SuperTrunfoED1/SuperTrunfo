@@ -2,19 +2,26 @@ package util;
 
 import java.io.IOException;
 
+import game.Engine;
+import model.Carta;
+
 public class Testador {
 	public static void main(String[] args) throws IOException {
-		Lista<Double> lista = new Lista<Double>();
-		
-		lista.add(22.3);
-		lista.add(109.3);
-		lista.add(6.78);
-		lista.add(11.5);
-		lista.add(33.9);
-		lista.show();
-		System.out.println("-----------------------------");
-		lista.set(6.78, 6.92);
-		lista.set(3, 11.23);
-		lista.show();
+		Engine partida = new Engine();
+        Carta cartas = new Carta();
+        Lista<Carta> listaCartas = new Lista<>();
+        try {
+            listaCartas = cartas.ler("view/assets/baralhoNaruto.txt");
+        } catch (IOException e) {
+            
+            e.printStackTrace();
+        }
+        partida.iniciar(listaCartas);
+
+        listaCartas = partida.getCartasPlayer();
+
+		for (int i = 0; i < listaCartas.size(); i++) {
+			System.out.println(listaCartas.search(i));
+		}
 	}
 }

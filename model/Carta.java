@@ -22,6 +22,30 @@ public class Carta {
     //----------------------------
     //construtores
 
+    public String getNomeCarta() {
+        return nomeCarta;
+    }
+
+    public void setNomeCarta(String nomeCarta) {
+        this.nomeCarta = nomeCarta;
+    }
+
+    public String[] getNomeAtributo() {
+        return nomeAtributo;
+    }
+
+    public void setNomeAtributo(String[] nomeAtributo) {
+        this.nomeAtributo = nomeAtributo;
+    }
+
+    public Double[] getValoresAtributo() {
+        return valoresAtributo;
+    }
+
+    public void setValoresAtributo(Double[] valoresAtributo) {
+        this.valoresAtributo = valoresAtributo;
+    }
+
     public Carta(String nomeCarta, String imgPath){  
         setNome(nomeCarta);
         setImgPath(imgPath);       
