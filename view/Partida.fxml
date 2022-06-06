@@ -40,6 +40,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Pane layoutX="-1.0" layoutY="1.0" onMouseClicked="#clickCard1" prefHeight="254.0" prefWidth="185.0" style="-fx-cursor: hand;" />
                </children>
                <effect>
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
@@ -57,11 +58,6 @@
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
                </effect>
             </Pane>
-            <Label alignment="CENTER" layoutX="950.0" layoutY="351.0" prefHeight="31.0" prefWidth="31.0" text="3º" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
             <Pane layoutX="320.0" layoutY="19.0" prefHeight="226.0" prefWidth="160.0" style="-fx-background-color: #59B24A;">
                <children>
                   <ImageView fitHeight="86.0" fitWidth="127.0" layoutX="17.0" layoutY="70.0">
@@ -116,6 +112,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Pane onMouseClicked="#clickCard2" prefHeight="254.0" prefWidth="185.0" style="-fx-cursor: hand;" />
                </children>
                <effect>
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
@@ -139,6 +136,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Pane layoutX="1.0" layoutY="1.0" onMouseClicked="#clickCard3" prefHeight="254.0" prefWidth="185.0" style="-fx-cursor: hand;" />
                </children>
                <effect>
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
@@ -162,12 +160,13 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Pane layoutY="1.0" onMouseClicked="#clickCard4" prefHeight="254.0" prefWidth="185.0" style="-fx-cursor: hand;" />
                </children>
                <effect>
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
                </effect>
             </Pane>
-            <Pane layoutX="76.0" layoutY="59.0" prefHeight="552.0" prefWidth="808.0" style="-fx-background-color: #000000;" visible="false">
+            <Pane fx:id="paneSeletorAtributo" layoutX="76.0" layoutY="59.0" prefHeight="552.0" prefWidth="808.0" style="-fx-background-color: #000000;">
                <children>
                   <ImageView fitHeight="552.0" fitWidth="808.0" pickOnBounds="true">
                      <image>
@@ -186,7 +185,6 @@
                   </ImageView>
                   <Pane layoutX="39.0" layoutY="109.0" prefHeight="363.0" prefWidth="280.0" style="-fx-background-color: #59B24A;">
                      <children>
-                        <ImageView fx:id="selectimgCard" fitHeight="156.0" fitWidth="232.0" layoutX="24.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="SelectAtributo1" alignment="CENTER" layoutX="41.0" layoutY="216.0" prefHeight="32.0" prefWidth="199.0" style="-fx-border-color: #000000;" text="Atributo 1">
                            <font>
                               <Font size="20.0" />
@@ -203,6 +201,7 @@
                            </font>
                         </Label>
                         <Label alignment="CENTER" layoutX="225.0" layoutY="333.0" prefHeight="24.0" prefWidth="41.0" text="IdCard" />
+                        <ImageView fx:id="selectimgCard" fitHeight="130.0" fitWidth="130.0" layoutX="75.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </Pane>
                   <Label fx:id="VS" layoutX="377.0" layoutY="244.0" text="VS" textFill="RED" visible="false">
@@ -241,7 +240,7 @@
          </font></Button>
       <VBox layoutX="78.0" layoutY="273.0" prefHeight="110.0" prefWidth="91.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="91.0" text="1" textFill="WHITE">
+            <Label fx:id="winIA" alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="91.0" text="1" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
@@ -251,7 +250,7 @@
                   <Font size="32.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="91.0" text="1" textFill="WHITE">
+            <Label fx:id="winJogador" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="91.0" text="1" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
@@ -285,17 +284,12 @@
             </Label>
          </children>
       </VBox>
-      <Label layoutX="1114.0" layoutY="320.0" prefHeight="31.0" prefWidth="100.0" text="RODADA " textFill="WHITE">
+      <Label layoutX="1114.0" layoutY="339.0" prefHeight="31.0" prefWidth="100.0" text="RODADA " textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label fx:id="rodada" alignment="CENTER" layoutX="1204.0" layoutY="319.0" prefHeight="31.0" prefWidth="31.0" text="2" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Label>
-      <Label fx:id="turno" layoutX="1145.0" layoutY="356.0" prefHeight="31.0" prefWidth="77.0" text="TURNO" textFill="WHITE">
+      <Label fx:id="rodada" alignment="CENTER" layoutX="1204.0" layoutY="338.0" prefHeight="31.0" prefWidth="31.0" text="2" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>

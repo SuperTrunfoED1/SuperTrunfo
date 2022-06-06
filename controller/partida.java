@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import model.Carta;
 import util.Lista;
 import view.src.Main;
@@ -108,6 +110,15 @@ public class partida implements Initializable {
     private Label turno;
 
     @FXML
+    private Label winIA;
+
+    @FXML
+    private Label winJogador;
+
+    @FXML
+    private Pane paneSeletorAtributo;
+
+    @FXML
     void sair(ActionEvent event) throws IOException {
         Main.telaMainMenu();
 
@@ -129,35 +140,50 @@ public class partida implements Initializable {
         }
         partida.iniciar(listaCartas);
 
-        listaCartas = partida.getCartasPlayer();
+        // cartas sortiadas para o Usuario
+        Lista<Carta> maoIA = partida.getCartasPlayer();
+
+        // cartas sortiadas para o Usuario
+        Lista<Carta> maoJogador = partida.getCartasPlayer();
        
         //1º Carta
-        imgCard1.setImage(pathImg(listaCartas.search(0).getImgPath(), listaCartas.search(0).getNome()));
-        card1Atributo1.setText(listaCartas.search(0).getNomeAtributo()[0]+": "+listaCartas.search(0).getValoresAtributo()[0]);
-        card1Atributo2.setText(listaCartas.search(0).getNomeAtributo()[1]+": "+listaCartas.search(0).getValoresAtributo()[1]);
-        card1Atributo3.setText(listaCartas.search(0).getNomeAtributo()[2]+": "+listaCartas.search(0).getValoresAtributo()[2]);
+        imgCard1.setImage(pathImg(maoJogador.search(0).getImgPath(), maoJogador.search(0).getNome()));
+        card1Atributo1.setText(maoJogador.search(0).getNomeAtributo()[0]+": "+maoJogador.search(0).getValoresAtributo()[0]);
+        card1Atributo2.setText(maoJogador.search(0).getNomeAtributo()[1]+": "+maoJogador.search(0).getValoresAtributo()[1]);
+        card1Atributo3.setText(maoJogador.search(0).getNomeAtributo()[2]+": "+maoJogador.search(0).getValoresAtributo()[2]);
 
         //2º Carta
-        imgCard2.setImage(pathImg(listaCartas.search(1).getImgPath(), listaCartas.search(1).getNome()));
-        card2Atributo1.setText(listaCartas.search(1).getNomeAtributo()[0]+": "+listaCartas.search(1).getValoresAtributo()[0]);
-        card2Atributo2.setText(listaCartas.search(1).getNomeAtributo()[1]+": "+listaCartas.search(1).getValoresAtributo()[1]);
-        card2Atributo3.setText(listaCartas.search(1).getNomeAtributo()[2]+": "+listaCartas.search(1).getValoresAtributo()[2]);
+        imgCard2.setImage(pathImg(maoJogador.search(1).getImgPath(), maoJogador.search(1).getNome()));
+        card2Atributo1.setText(maoJogador.search(1).getNomeAtributo()[0]+": "+maoJogador.search(1).getValoresAtributo()[0]);
+        card2Atributo2.setText(maoJogador.search(1).getNomeAtributo()[1]+": "+maoJogador.search(1).getValoresAtributo()[1]);
+        card2Atributo3.setText(maoJogador.search(1).getNomeAtributo()[2]+": "+maoJogador.search(1).getValoresAtributo()[2]);
 
         //3º Carta
-        imgCard3.setImage(pathImg(listaCartas.search(2).getImgPath(), listaCartas.search(2).getNome()));
-        card3Atributo1.setText(listaCartas.search(2).getNomeAtributo()[0]+": "+listaCartas.search(2).getValoresAtributo()[0]);
-        card3Atributo2.setText(listaCartas.search(2).getNomeAtributo()[1]+": "+listaCartas.search(2).getValoresAtributo()[1]);
-        card3Atributo3.setText(listaCartas.search(2).getNomeAtributo()[2]+": "+listaCartas.search(2).getValoresAtributo()[2]);
+        imgCard3.setImage(pathImg(maoJogador.search(2).getImgPath(), maoJogador.search(2).getNome()));
+        card3Atributo1.setText(maoJogador.search(2).getNomeAtributo()[0]+": "+maoJogador.search(2).getValoresAtributo()[0]);
+        card3Atributo2.setText(maoJogador.search(2).getNomeAtributo()[1]+": "+maoJogador.search(2).getValoresAtributo()[1]);
+        card3Atributo3.setText(maoJogador.search(2).getNomeAtributo()[2]+": "+maoJogador.search(2).getValoresAtributo()[2]);
         
         //4º Carta
-        imgCard4.setImage(pathImg(listaCartas.search(3).getImgPath(), listaCartas.search(3).getNome()));
-        card4Atributo1.setText(listaCartas.search(3).getNomeAtributo()[0]+": "+listaCartas.search(3).getValoresAtributo()[0]);
-        card4Atributo2.setText(listaCartas.search(3).getNomeAtributo()[1]+": "+listaCartas.search(3).getValoresAtributo()[1]);
-        card4Atributo3.setText(listaCartas.search(3).getNomeAtributo()[2]+": "+listaCartas.search(3).getValoresAtributo()[2]);
+        imgCard4.setImage(pathImg(maoJogador.search(3).getImgPath(), maoJogador.search(3).getNome()));
+        card4Atributo1.setText(maoJogador.search(3).getNomeAtributo()[0]+": "+maoJogador.search(3).getValoresAtributo()[0]);
+        card4Atributo2.setText(maoJogador.search(3).getNomeAtributo()[1]+": "+maoJogador.search(3).getValoresAtributo()[1]);
+        card4Atributo3.setText(maoJogador.search(3).getNomeAtributo()[2]+": "+maoJogador.search(3).getValoresAtributo()[2]);
 
-        
+        //Total de rodadas ganhas pelo Usuario
+        winJogador.setText( String.valueOf(partida.getRoundWinnedPlayer()));
+        //Total de rodadas ganhas pelo IA
+        winIA.setText( String.valueOf(partida.getRoundWinnedPC()));
 
-        
+        //Total de pontos ganhos nas rodadas pelo Usuario
+        pontos_jogador.setText( String.valueOf(partida.getFasePontPlayer()));
+
+        //Total de pontos ganhos nas rodadas pelo PC
+        pontos_ia.setText( String.valueOf(partida.getFasePontPC0()));
+
+
+
+
 
     }
 
@@ -167,4 +193,29 @@ public class partida implements Initializable {
 
         return im;
     }
+
+
+    @FXML
+    void clickCard1(MouseEvent event) {
+        paneSeletorAtributo.setVisible(true);
+    }
+
+    @FXML
+    void clickCard2(MouseEvent event) {
+        paneSeletorAtributo.setVisible(true);
+
+    }
+
+    @FXML
+    void clickCard3(MouseEvent event) {
+        paneSeletorAtributo.setVisible(true);
+
+    }
+
+    @FXML
+    void clickCard4(MouseEvent event) {
+        paneSeletorAtributo.setVisible(true);
+
+    }
+
 }
