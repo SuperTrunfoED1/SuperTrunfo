@@ -11,7 +11,7 @@ public class Testador {
         Carta cartas = new Carta();
         Lista<Carta> listaCartas = new Lista<>();
         try {
-            listaCartas = cartas.ler("view/assets/baralhoFutebol.txt");
+            listaCartas = cartas.ler("view/assets/baralhoCarros.txt");
         } catch (IOException e) {
             
             e.printStackTrace();
