@@ -11,8 +11,8 @@ public class Engine {
     static int roundWinnedPC;
     static int roundWinnedPlayer;
     static Lista<Carta> baralho;
-    static Lista<Carta> cartasPC = new Lista<>();
-    static Lista<Carta> cartasPlayer = new Lista<>();
+    static Lista<Carta> cartasPC;
+    static Lista<Carta> cartasPlayer;
     static Tema cenario;
     static boolean[] turnos;
 
@@ -25,7 +25,7 @@ public class Engine {
         Random gerador = new Random();
         int index;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             index = gerador.nextInt(baralho.size());
             cartasPC.add(baralho.remove(index));
 
