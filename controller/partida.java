@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import view.src.Main;
 
@@ -113,7 +114,19 @@ public class partida implements Initializable {
 
         NomeJogador.setText(Main.getRetorno());
         pontos_ia.setText("0");
-        pontos_jogador.setText("0");
+        pontos_jogador.setText("0"); 
+
+        Image im = new Image("view/assets/ImagensCards/Naruto.png");
+        Image im2 = new Image("view/assets/ImagensCards/Kakashi.png");
+        Image im3 = new Image("view/assets/ImagensCards/Jiraya.png");
+        Image im4 = new Image("view/assets/ImagensCards/Zabusa.png");
+
+        imgCard1.setImage(im);
+        imgCard2.setImage(im2);
+        imgCard3.setImage(im3);
+        imgCard4.setImage(im4);
+
+           
 
     }
 }
