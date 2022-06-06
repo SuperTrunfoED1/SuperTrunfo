@@ -161,7 +161,10 @@ public class partida implements Initializable {
 
     static Engine partida = new Engine();
     static Carta cartas = new Carta();
+    static Carta cartaSelecionadaUsuario = new Carta();
     static Lista<Carta> listaCartas = new Lista<Carta>();
+    static Lista<Carta> maoJogador = new Lista<>();
+    static Lista<Carta> maoIA = new Lista<>();
     static int sorteioIA = 4;
 
     @Override
@@ -178,7 +181,9 @@ public class partida implements Initializable {
         partida.iniciar(listaCartas);
 
         // cartas sortiadas para o Usuario
-        Lista<Carta> maoJogador = partida.getCartasPlayer();
+        maoJogador = partida.getCartasPlayer();
+        maoIA = partida.getCartasPC();
+
        
         //1º Carta
         imgCard1.setImage(pathImg(maoJogador.search(0).getImgPath(), maoJogador.search(0).getNome()));
@@ -229,25 +234,24 @@ public class partida implements Initializable {
     void clickCard1(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
         disibleCard1.setDisable(true);
-        Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(0).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(0).getImgPath(), maoJogador.search(0).getNome()));
         SelectAtributo1.setText(maoJogador.search(0).getNomeAtributo()[0]+": "+maoJogador.search(0).getValoresAtributo()[0]);
         SelectAtributo2.setText(maoJogador.search(0).getNomeAtributo()[1]+": "+maoJogador.search(0).getValoresAtributo()[1]);
         SelectAtributo3.setText(maoJogador.search(0).getNomeAtributo()[2]+": "+maoJogador.search(0).getValoresAtributo()[2]);
-
+        cartaSelecionadaUsuario = maoJogador.search(0);
     }
 
     @FXML
     void clickCard2(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
         disibleCard2.setDisable(true);
-        Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(1).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(1).getImgPath(), maoJogador.search(1).getNome()));
         SelectAtributo1.setText(maoJogador.search(1).getNomeAtributo()[0]+": "+maoJogador.search(1).getValoresAtributo()[0]);
         SelectAtributo2.setText(maoJogador.search(1).getNomeAtributo()[1]+": "+maoJogador.search(1).getValoresAtributo()[1]);
         SelectAtributo3.setText(maoJogador.search(1).getNomeAtributo()[2]+": "+maoJogador.search(1).getValoresAtributo()[2]);
+        cartaSelecionadaUsuario = maoJogador.search(1);
 
     }
 
@@ -255,12 +259,12 @@ public class partida implements Initializable {
     void clickCard3(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
         disibleCard3.setDisable(true);
-        Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(2).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(2).getImgPath(), maoJogador.search(2).getNome()));
         SelectAtributo1.setText(maoJogador.search(2).getNomeAtributo()[0]+": "+maoJogador.search(2).getValoresAtributo()[0]);
         SelectAtributo2.setText(maoJogador.search(2).getNomeAtributo()[1]+": "+maoJogador.search(2).getValoresAtributo()[1]);
         SelectAtributo3.setText(maoJogador.search(2).getNomeAtributo()[2]+": "+maoJogador.search(2).getValoresAtributo()[2]);
+        cartaSelecionadaUsuario = maoJogador.search(2);
 
     }
 
@@ -269,12 +273,12 @@ public class partida implements Initializable {
         paneSeletorAtributo.setVisible(true);
         disibleCard4.setDisable(true);
 
-        Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(3).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(3).getImgPath(), maoJogador.search(3).getNome()));
         SelectAtributo1.setText(maoJogador.search(3).getNomeAtributo()[0]+": "+maoJogador.search(3).getValoresAtributo()[0]);
         SelectAtributo2.setText(maoJogador.search(3).getNomeAtributo()[1]+": "+maoJogador.search(3).getValoresAtributo()[1]);
         SelectAtributo3.setText(maoJogador.search(3).getNomeAtributo()[2]+": "+maoJogador.search(3).getValoresAtributo()[2]);
+        cartaSelecionadaUsuario = maoJogador.search(3);
 
     }
 
@@ -285,7 +289,6 @@ public class partida implements Initializable {
         VS.setVisible(true);
         proximaPart.setVisible(true);
 
-        Lista<Carta> maoIA = partida.getCartasPC();
         Random sorteio = new Random();
         int sorteado = sorteio.nextInt(sorteioIA);
         sorteioIA--;
@@ -297,6 +300,9 @@ public class partida implements Initializable {
         SelectIA3.setText(maoIA.search(sorteado).getNomeAtributo()[2]+": "+maoIA.search(sorteado).getValoresAtributo()[2]);
         SelectIA2.setDisable(true);
         SelectIA3.setDisable(true);
+
+        partida.comparar(cartaSelecionadaUsuario,maoIA.search(sorteado), 0);
+
         maoIA.remove(sorteado);
 
     
@@ -310,7 +316,6 @@ public class partida implements Initializable {
         VS.setVisible(true);
         proximaPart.setVisible(true);
 
-        Lista<Carta> maoIA = partida.getCartasPC();
         Random sorteio = new Random();
         int sorteado = sorteio.nextInt(sorteioIA);
         sorteioIA--;
@@ -334,7 +339,6 @@ public class partida implements Initializable {
         VS.setVisible(true);
         proximaPart.setVisible(true);
 
-        Lista<Carta> maoIA = partida.getCartasPC();
         Random sorteio = new Random();
         int sorteado = sorteio.nextInt(sorteioIA);
         sorteioIA--;
