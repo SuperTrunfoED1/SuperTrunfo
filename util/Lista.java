@@ -1,6 +1,8 @@
 package util;
 
-public class Lista<T> implements ListaInterface<T> {
+import java.util.List;
+
+public class Lista<T> implements ListaInterface<T> { //implementar List<T> !!!!
     class Node {
         Node next;
         Node before;

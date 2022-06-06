@@ -87,14 +87,6 @@ public class mainMenu implements Initializable {
         int h = 1;
         int j = 0;
 
-        while (h < usuarios.size() - 1) {
-            h = 3 * h + 1;
-        }
-
-        while (h > 1) {
-            h = h / 3;
-        }
-
         for (int i = h; i < usuarios.size(); i++) {
             usu = usuarios.search(i);
             j = i - h;

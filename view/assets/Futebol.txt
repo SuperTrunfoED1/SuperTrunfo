@@ -1,1 +1,1 @@
-Benzema,null,Chute,99.0,Velocidade,78.0,Resistencia,82.0
+Marcelo,C:\Users\pedro\OneDrive\Documents\SuperTrunfo\view\assets\ImagensCards\Marcelo.png,Velocidade,99.0,Chute,78.0,Resistencia,72.0

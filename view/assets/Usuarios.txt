@@ -4,3 +4,4 @@ vitor,123,0
 pedro123,123,0
 ricfardo123,123,0
 toficandoloko,1234,0
+Bruno,1234,0
