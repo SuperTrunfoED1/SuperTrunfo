@@ -68,12 +68,20 @@ public class Main extends Application {
     public void start(Stage pS) throws Exception {
         setpS(pS);
         pS.show();
-        telaPartida();
+        telaLogin();
     }
 
     public static void telaLogin() throws IOException {
 
         Parent root = FXMLLoader.load(Main.class.getResource("/view/Login.fxml"));
+        Scene cena = new Scene(root);
+        pS.setTitle("login");
+        pS.setScene(cena);
+    }
+
+    public static void telaCadastro() throws IOException {
+
+        Parent root = FXMLLoader.load(Main.class.getResource("/view/CadastrarUsuario.fxml"));
         Scene cena = new Scene(root);
         pS.setTitle("login");
         pS.setScene(cena);

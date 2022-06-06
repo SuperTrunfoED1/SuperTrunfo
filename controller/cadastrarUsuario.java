@@ -12,6 +12,7 @@ import model.User;
 import util.EscritorCSV;
 import util.Lista;
 import util.ListaInterface;
+import view.src.Main;
 
 public class cadastrarUsuario {
 
@@ -54,11 +55,8 @@ public class cadastrarUsuario {
 
                     escritor.escrever("view/assets/Usuarios.txt", lista);
 
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Sucesso");
-                    alert.setHeaderText("CADASTRADO");
-                    alert.setContentText("Agora é so logar");
-                    alert.show();
+                    Main.setRetorno(user.getNickname());
+                    Main.telaMainMenu();
 
                 } else {
 

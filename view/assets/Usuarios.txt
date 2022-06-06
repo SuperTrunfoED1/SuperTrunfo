@@ -1,3 +1,6 @@
 teste,123,0
 felipe,1234,0
 vitor,123,0
+pedro123,123,0
+ricfardo123,123,0
+toficandoloko,1234,0

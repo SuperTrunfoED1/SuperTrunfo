@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javafx.scene.image.Image;
+
 public class Carta {
     
     //----------------------------
@@ -13,7 +15,7 @@ public class Carta {
     String nomeCarta;   
     //usei esse nome na variavel para não confundir com o "name" em Atributos.
 
-    String imgPath;//caminho da imagem do personagem ou objeto da carta
+    Image imgPath;//caminho da imagem do personagem ou objeto da carta
     
     String [] nomeAtributo = new String[3];
 
@@ -46,7 +48,7 @@ public class Carta {
         this.valoresAtributo = valoresAtributo;
     }
 
-    public Carta(String nomeCarta, String imgPath){  
+    public Carta(String nomeCarta, Image imgPath){  
         setNome(nomeCarta);
         setImgPath(imgPath);       
     }
@@ -76,18 +78,20 @@ public class Carta {
         }
     }
 
-    public String getImgPath() {
+    public Image getImgPath() {
         return imgPath;
     }
     
-    public void setImgPath(String imgPath) {
+    public void setImgPath(Image imgPath) {
         if(imgPath == null){
             System.out.println("Digita algo!");
-        }else if(imgPath.isBlank()){
-            System.out.println("O path não pode ser apenas um espaço vazio!");
         }else{
             this.imgPath = imgPath;
         }
+    }
+
+    public String getUrl(){
+        return imgPath.getUrl();
     }
 
     //----------------------------
@@ -106,7 +110,11 @@ public class Carta {
 
                 String[] armazena = linha.split(",");
                 carta.setNome(armazena[0]);
-                carta.setImgPath(armazena[1]);
+                
+                Image tmp = new Image(armazena[1]);
+
+                carta.setImgPath(tmp);
+
                 carta.nomeAtributo[0] = armazena[2];
                 carta.valoresAtributo[0] = Double.valueOf(armazena[3]);
 

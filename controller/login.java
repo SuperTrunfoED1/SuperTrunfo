@@ -74,14 +74,7 @@ public class login {
 
     @FXML
     void cadastrar(ActionEvent event) throws IOException {
-
-        Stage stg = new Stage();
-        Parent cadastro = FXMLLoader.load(getClass().getResource("/view/CadastrarUsuario.fxml"));
-        Scene cena = new Scene(cadastro);
-        stg.setScene(cena);
-        stg.setTitle("Cadastrar");
-        stg.show();
-
+        Main.telaCadastro();
     }
 
     @FXML
