@@ -1,0 +1,16 @@
+Icardi,view/assets/ImagensCards/,ataque,900,passe,550,defesa,200
+Messi,view/assets/ImagensCards/,ataque,1750,passe,1100,defesa,100
+CR7,view/assets/ImagensCards/,ataque,2000,passe,700,defesa,250
+Salah,view/assets/ImagensCards/,ataque,1470,passe,800,defesa,300
+Neymar,view/assets/ImagensCards/,ataque,1650,passe,1000,defesa,100
+Benzema,view/assets/ImagensCards/,ataque,1500,passe,900,defesa,350
+Ronaldinho,view/assets/ImagensCards/,ataque,1750,passe,1500,defesa,200
+Ozil,view/assets/ImagensCards/,ataque,1400,passe,1100,defesa,320
+Mbappe,view/assets/ImagensCards/,ataque,1600,passe,800,defesa,300
+Ronaldo,view/assets/ImagensCards/,ataque,2200,passe,700,defesa,400
+Lewandowski,view/assets/ImagensCards/,ataque,1700,passe,800,defesa,200
+Kroos,view/assets/ImagensCards/,ataque,800,passe,1300,defesa,600
+Modric,view/assets/ImagensCards/,ataque,900,passe,1170,defesa,800
+Marcelo,view/assets/ImagensCards/,ataque,700,passe,900,defesa,100
+Bale,view/assets/ImagensCards/,ataque,1100,passe,800,defesa,200
+Ibrahimovic,view/assets/ImagensCards/,ataque,1450,passe,900,defesa,400
