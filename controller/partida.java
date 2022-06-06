@@ -130,13 +130,32 @@ public class partida implements Initializable {
     private Label winJogador;
 
     @FXML
+    private Pane disibleCard1;
+
+    @FXML
+    private Pane disibleCard2;
+
+    @FXML
+    private Pane disibleCard3;
+
+    @FXML
+    private Pane disibleCard4;
+
+
+    @FXML
     void sair(ActionEvent event) throws IOException {
         Main.telaMainMenu();
     }
 
     @FXML
     void proximaPartida(ActionEvent event) throws IOException {
-        Main.telaPartida();
+        paneSeletorAtributo.setVisible(false);
+        paneCardIA.setVisible(false);
+        VS.setVisible(false);
+        proximaPart.setVisible(false);
+        SelectIA1.setDisable(false);
+        SelectIA2.setDisable(false);
+        SelectIA3.setDisable(false);
 
     }
 
@@ -144,7 +163,6 @@ public class partida implements Initializable {
     static Carta cartas = new Carta();
     static Lista<Carta> listaCartas = new Lista<Carta>();
     static int sorteioIA = 4;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -210,6 +228,7 @@ public class partida implements Initializable {
     @FXML
     void clickCard1(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
+        disibleCard1.setDisable(true);
         Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(0).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(0).getImgPath(), maoJogador.search(0).getNome()));
@@ -222,6 +241,7 @@ public class partida implements Initializable {
     @FXML
     void clickCard2(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
+        disibleCard2.setDisable(true);
         Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(1).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(1).getImgPath(), maoJogador.search(1).getNome()));
@@ -234,6 +254,7 @@ public class partida implements Initializable {
     @FXML
     void clickCard3(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
+        disibleCard3.setDisable(true);
         Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(2).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(2).getImgPath(), maoJogador.search(2).getNome()));
@@ -246,6 +267,8 @@ public class partida implements Initializable {
     @FXML
     void clickCard4(MouseEvent event) {
         paneSeletorAtributo.setVisible(true);
+        disibleCard4.setDisable(true);
+
         Lista<Carta> maoJogador = partida.getCartasPlayer();
         nomeCardSelect.setText(maoJogador.search(3).getNome());
         selectimgCard.setImage(pathImg(maoJogador.search(3).getImgPath(), maoJogador.search(3).getNome()));
@@ -274,6 +297,8 @@ public class partida implements Initializable {
         SelectIA3.setText(maoIA.search(sorteado).getNomeAtributo()[2]+": "+maoIA.search(sorteado).getValoresAtributo()[2]);
         SelectIA2.setDisable(true);
         SelectIA3.setDisable(true);
+        maoIA.remove(sorteado);
+
     
 
     }
@@ -281,11 +306,48 @@ public class partida implements Initializable {
     @FXML
     void clickAtributo2(MouseEvent event) {
 
+        paneCardIA.setVisible(true);
+        VS.setVisible(true);
+        proximaPart.setVisible(true);
+
+        Lista<Carta> maoIA = partida.getCartasPC();
+        Random sorteio = new Random();
+        int sorteado = sorteio.nextInt(sorteioIA);
+        sorteioIA--;
+
+        nomeCardSelectIA.setText(maoIA.search(sorteado).getNome());
+        selectimgCardIA.setImage(pathImg(maoIA.search(sorteado).getImgPath(), maoIA.search(sorteado).getNome()));
+        SelectIA1.setText(maoIA.search(sorteado).getNomeAtributo()[0]+": "+maoIA.search(sorteado).getValoresAtributo()[0]);
+        SelectIA2.setText(maoIA.search(sorteado).getNomeAtributo()[1]+": "+maoIA.search(sorteado).getValoresAtributo()[1]);
+        SelectIA3.setText(maoIA.search(sorteado).getNomeAtributo()[2]+": "+maoIA.search(sorteado).getValoresAtributo()[2]);
+        SelectIA1.setDisable(true);
+        SelectIA3.setDisable(true);
+        maoIA.remove(sorteado);
+        
+
     }
 
     @FXML
     void clickAtributo3(MouseEvent event) {
        
+        paneCardIA.setVisible(true);
+        VS.setVisible(true);
+        proximaPart.setVisible(true);
+
+        Lista<Carta> maoIA = partida.getCartasPC();
+        Random sorteio = new Random();
+        int sorteado = sorteio.nextInt(sorteioIA);
+        sorteioIA--;
+
+        nomeCardSelectIA.setText(maoIA.search(sorteado).getNome());
+        selectimgCardIA.setImage(pathImg(maoIA.search(sorteado).getImgPath(), maoIA.search(sorteado).getNome()));
+        SelectIA1.setText(maoIA.search(sorteado).getNomeAtributo()[0]+": "+maoIA.search(sorteado).getValoresAtributo()[0]);
+        SelectIA2.setText(maoIA.search(sorteado).getNomeAtributo()[1]+": "+maoIA.search(sorteado).getValoresAtributo()[1]);
+        SelectIA3.setText(maoIA.search(sorteado).getNomeAtributo()[2]+": "+maoIA.search(sorteado).getValoresAtributo()[2]);
+        SelectIA1.setDisable(true);
+        SelectIA2.setDisable(true);
+        maoIA.remove(sorteado);
+
     }
 
 }

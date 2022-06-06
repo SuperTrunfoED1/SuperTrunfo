@@ -22,7 +22,7 @@
       </ImageView>
       <Pane layoutX="164.0" layoutY="5.0" prefHeight="714.0" prefWidth="922.0">
          <children>
-            <Pane layoutX="119.0" layoutY="450.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
+            <Pane fx:id="disibleCard1" layoutX="119.0" layoutY="450.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
                <children>
                   <ImageView fx:id="imgCard1" fitHeight="130.0" fitWidth="130.0" layoutX="31.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="card1Atributo1" alignment="CENTER" layoutX="10.0" layoutY="140.0" prefHeight="27.0" prefWidth="170.0" text="Atributo 1">
@@ -94,7 +94,7 @@
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
                </effect>
             </Pane>
-            <Pane layoutX="308.0" layoutY="444.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
+            <Pane fx:id="disibleCard2" layoutX="308.0" layoutY="444.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
                <children>
                   <ImageView fx:id="imgCard2" fitHeight="130.0" fitWidth="130.0" layoutX="27.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="card2Atributo1" alignment="CENTER" layoutX="7.0" layoutY="140.0" prefHeight="18.0" prefWidth="170.0" text="Atributo 1">
@@ -118,7 +118,7 @@
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
                </effect>
             </Pane>
-            <Pane layoutX="497.0" layoutY="452.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
+            <Pane fx:id="disibleCard3" layoutX="497.0" layoutY="452.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
                <children>
                   <ImageView fx:id="imgCard3" fitHeight="130.0" fitWidth="130.0" layoutX="27.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="card3Atributo1" alignment="CENTER" layoutX="7.0" layoutY="140.0" prefHeight="18.0" prefWidth="170.0" text="Atributo 1">
@@ -142,7 +142,7 @@
                   <InnerShadow height="15.26" radius="5.8149999999999995" width="10.0" />
                </effect>
             </Pane>
-            <Pane layoutX="686.0" layoutY="445.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
+            <Pane fx:id="disibleCard4" layoutX="686.0" layoutY="445.0" prefHeight="254.0" prefWidth="185.0" style="-fx-background-color: #59B24A;">
                <children>
                   <ImageView fx:id="imgCard4" fitHeight="130.0" fitWidth="130.0" layoutX="28.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="card4Atributo1" alignment="CENTER" layoutX="8.0" layoutY="140.0" prefHeight="18.0" prefWidth="170.0" text="Atributo 1">

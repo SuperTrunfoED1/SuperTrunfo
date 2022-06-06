@@ -68,7 +68,7 @@ public class Main extends Application {
     public void start(Stage pS) throws Exception {
         setpS(pS);
         pS.show();
-        telaLogin();
+        telaPartida();
     }
 
     public static void telaLogin() throws IOException {

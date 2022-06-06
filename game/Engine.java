@@ -44,7 +44,17 @@ public class Engine {
 
     }
 
-    public static boolean comparar(Carta jogador, Carta IA) {
+    public static boolean comparar(Carta jogador, Carta IA, int atributo) {
+
+        if (jogador.getValoresAtributo()[atributo] > IA.getValoresAtributo()[atributo] ) {
+            
+            roundWinnedPlayer++;
+            fasePontPlayer +=10;
+            return true;
+        }
+
+        roundWinnedPC++;
+        fasePontPC0 +=10;
 
         return false;
     }
