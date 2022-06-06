@@ -7,13 +7,13 @@ import util.Lista;
 
 public class Engine {
 
-    static int fasePontPC0 = 0;
-    static int fasePontPlayer = 0;
-    static int roundWinnedPC = 0;
-    static int roundWinnedPlayer = 0;
+    static int fasePontPC0;
+    static int fasePontPlayer;
+    static int roundWinnedPC;
+    static int roundWinnedPlayer;
     static Lista<Carta> baralho;
-    static Lista<Carta> cartasPC = new Lista<>();
-    static Lista<Carta> cartasPlayer = new Lista<>();
+    static Lista<Carta> cartasPC = null;
+    static Lista<Carta> cartasPlayer = null;
     static Tema cenario;
     static boolean[] turnos;
 
@@ -21,6 +21,13 @@ public class Engine {
     // Metodos
 
     public static void iniciar(Lista<Carta> cartas) {
+
+        fasePontPC0 = 0;
+        fasePontPlayer = 0;
+        roundWinnedPC = 0;
+        roundWinnedPlayer = 0;
+        cartasPC = new Lista<>();
+        cartasPlayer = new Lista<>();
 
         baralho = cartas;
         Random gerador = new Random();

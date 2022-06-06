@@ -183,16 +183,24 @@ public class partida implements Initializable {
 
     }
 
-    static Engine partida = new Engine();
-    static Carta cartas = new Carta();
-    static Carta cartaSelecionadaUsuario = new Carta();
-    static Lista<Carta> listaCartas = new Lista<Carta>();
-    static Lista<Carta> maoJogador = new Lista<>();
-    static Lista<Carta> maoIA = new Lista<>();
-    static int sorteioIA = 4;
+    static Engine partida = null;
+    static Carta cartas = null;
+    static Carta cartaSelecionadaUsuario = null;
+    static Lista<Carta> listaCartas = null;
+    static Lista<Carta> maoJogador = null;
+    static Lista<Carta> maoIA = null;
+    static int sorteioIA;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        partida = new Engine();
+        cartas = new Carta();
+        cartaSelecionadaUsuario = new Carta();
+        listaCartas = new Lista<Carta>();
+        maoJogador = new Lista<>();
+        maoIA = new Lista<>();
+        sorteioIA = 4;
 
         NomeJogador.setText(Main.getRetorno());
 

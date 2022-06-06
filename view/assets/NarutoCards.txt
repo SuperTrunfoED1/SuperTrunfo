@@ -1,4 +1,1 @@
-
-TsunadenullForca2000.0Defesa1500.0Velocidade100.0
-Tsunade,null,Forca,2000.0,Defesa,1500.0,Velocidade,100.0
 Temari,C:\Users\pedro\OneDrive\Documents\SuperTrunfo\view\assets\ImagensCards\Temari.png,Forca,1080.0,Defesa,2000.0,Velocidade,1075.0
