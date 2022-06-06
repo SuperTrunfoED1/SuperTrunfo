@@ -12,9 +12,14 @@ public class Tema {
     Lista<Carta> baralho;
 
     public Tema(String nome, Long id) {
-        this.nome = nome;
+        setNome(nome);
         this.id = id;
-        baralho = null;
+        baralho = new Lista<Carta>();
+    }
+
+    public Tema(String nome) {
+        setNome(nome);
+        baralho = new Lista<Carta>();
     }
 
     public String getNome() {

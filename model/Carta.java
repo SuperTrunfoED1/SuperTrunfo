@@ -12,14 +12,14 @@ public class Carta {
     //----------------------------
     //atributos
     
-    String nomeCarta;   
+    private String nomeCarta;   
     //usei esse nome na variavel para não confundir com o "name" em Atributos.
 
-    Image imgPath;//caminho da imagem do personagem ou objeto da carta
+    private Image imgPath;//caminho da imagem do personagem ou objeto da carta
     
-    String [] nomeAtributo = new String[3];
+    private String [] nomeAtributo = new String[3];
 
-    Double [] valoresAtributo = new Double[3];
+    private Double [] valoresAtributo = new Double[3];
     
     //----------------------------
     //construtores
@@ -83,7 +83,7 @@ public class Carta {
     }
     
     public void setImgPath(Image imgPath) {
-        if(imgPath == null){
+        if(imgPath.getUrl() == null){
             System.out.println("Digita algo!");
         }else{
             this.imgPath = imgPath;
@@ -130,6 +130,20 @@ public class Carta {
         bufferedReader.close();
 
         return ListaCartas;
+    }
+
+    @Override
+    public String toString() {
+        return(
+            nomeCarta + "," +
+            getUrl() + "," + 
+            nomeAtributo[0] + "," + 
+            valoresAtributo[0] + "," +
+            nomeAtributo[1] + "," +
+            valoresAtributo[1] + "," +
+            nomeAtributo[2] + "," +
+            valoresAtributo[2]
+        ); 
     }
 
     //----------------------------
