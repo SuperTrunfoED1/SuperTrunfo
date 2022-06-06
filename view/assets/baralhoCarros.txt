@@ -1,0 +1,16 @@
+Mercedes,view/assets/ImagensCards/,velocidade,200,cavalos,190,ano,2015
+Jeep,view/assets/ImagensCards/,velocidade,150,cavalos,150,ano,2017
+Bmw,view/assets/ImagensCards/,velocidade,220,cavalos,250,ano,2021
+Audi,view/assets/ImagensCards/,velocidade,210,cavalos,220,ano,2019
+Camaro,view/assets/ImagensCards/,velocidade,1650,cavalos,1000,ano,100
+Benzema,view/assets/ImagensCards/,velocidade,1500,cavalos,900,ano,350
+Ronaldinho,view/assets/ImagensCards/,velocidade,1750,cavalos,1500,ano,200
+Ozil,view/assets/ImagensCards/,velocidade,1400,cavalos,1100,ano,320
+Mbappe,view/assets/ImagensCards/,velocidade,1600,cavalos,800,ano,300
+Ronaldo,view/assets/ImagensCards/,velocidade,2200,cavalos,700,ano,400
+Lewandowski,view/assets/ImagensCards/,velocidade,1700,cavalos,800,ano,200
+Kroos,view/assets/ImagensCards/,velocidade,800,cavalos,1300,ano,600
+Modric,view/assets/ImagensCards/,velocidade,900,cavalos,1170,ano,800
+Marcelo,view/assets/ImagensCards/,velocidade,700,cavalos,900,ano,100
+Bale,view/assets/ImagensCards/,velocidade,1100,cavalos,800,ano,200
+Ibrahimovic,view/assets/ImagensCards/,velocidade,1450,cavalos,900,ano,400
